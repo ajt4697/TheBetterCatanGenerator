@@ -1,9 +1,22 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div id="welcome-banner" style="text-align:center">
   <h1>
-    Welcome to Jami and Ari's Catan Generator, the best generator ever!
+    Jami & Ari's Catan Board Generator
   </h1>
-  <img width="300" alt="Catan Logo" src="../assets/images/catanboard.png">
 </div>
 
-<button>Generate That Shit</button>
+<div id="gen-options-area" style="text-align:left" >
+<p>Select Generation Options:</p>
+<input type="checkbox"> Normal
+</div>
+
+
+
+
+
+<button (click)="onClick()">Generate Board</button>
+
+
+<canvas id="board" width="1000" height="1000" style="border:1px solid #000000;"></canvas>
+
+
