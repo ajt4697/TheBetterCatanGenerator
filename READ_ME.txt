@@ -13,7 +13,7 @@ Dictionary of size 19
 	[resource : number]
 
 
-NUMBERS:  2,3,4,4,5,5,6,6,8,8,9,9,10,10,11,11,12
+NUMBERS:  [2,3,4,4,5,5,6,6,8,8,9,9,10,10,11,11,12
 
 
 
@@ -26,8 +26,3 @@ Bored generation options?
 
 
 Somehow have website map to LED bored.
-
-	
-
-
-
