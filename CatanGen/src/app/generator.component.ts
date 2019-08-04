@@ -13,6 +13,8 @@ export class GeneratorComponent {
 
   normalNumbers: Array<number>;
   normalResources: Array<string>;
+  numNumbers: number;
+  numResources: number;
 
   constructor() {
     // Desert tile will not be included in the resource array
@@ -20,6 +22,8 @@ export class GeneratorComponent {
     this.normalNumbers = [2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12];
     this.normalResources = ['ore', 'ore', 'ore', 'brick', 'brick', 'brick', 'sheep', 'sheep', 'sheep', 'sheep',
     'wood', 'wood', 'wood', 'wood', 'hay', 'hay', 'hay', 'hay'];
+    this.numNumbers = 18;
+    this.numResources = 18;
 
   }
 
@@ -31,19 +35,24 @@ export class GeneratorComponent {
     const shuffledNumbers = _.shuffle(this.normalNumbers);
     const shuffledResources = _.shuffle(this.normalResources);
 
-    // Zip the two shuffled arrays to create an array of number and resource pair arrays.
-    // Right now this creates an array of array pairs. I need to change this to an array of objects
-    // where the objects have two properties: resource and number.
-    // Just thinking this will be better for future.
-    const arr = _.zip(shuffledNumbers, shuffledResources);
+    // Create an empty array to hold the resulting tiles (resource + number combo).
+    const tiles = [];
+    // Iterate through the shuffledNumbers and create tiles with the corresponding
+    // resource from shuffledNumbers.
+    for (let i = 0; i < this.numNumbers; i++) {
+      const numb = shuffledNumbers[i];
+      const resource = shuffledResources[i];
+      const tile = {num: numb, res: resource};
+      tiles.push(tile);
+    }
 
     // Need to push a desert tile.
-    const desert = [0, 'desert'];
+    const desert = {num: 0, res: 'desert'};
     // Get a random number to represent the random index we will insert the desert at.
     const randomNum = Math.floor(Math.random() * 19);
     // Insert the desert tile.
-    arr.splice(randomNum, 0, desert);
-
+    tiles.splice(randomNum, 0, desert);
+    console.log(tiles);
 
   }
 
