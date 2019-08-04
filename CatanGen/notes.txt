@@ -1,0 +1,24 @@
+In his file we can keep track of things we want to do/aren't done
+implementing, etc.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------
+TO-DO:
+------------------------------------------------------------------------
+
++ I want to create an actual object for tiles, not just a basic one. (8/3/19)
+
+
+
+
+
+
+
+------------------------------------------------------------------------
+NOTES:
+------------------------------------------------------------------------
+
++ The honeycomb styling code is from this link:
+  https://codepen.io/rowanrp/pen/wmvqjr
+
+
