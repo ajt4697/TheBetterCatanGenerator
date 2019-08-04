@@ -32,6 +32,9 @@ export class GeneratorComponent {
     const shuffledResources = _.shuffle(this.normalResources);
 
     // Zip the two shuffled arrays to create an array of number and resource pair arrays.
+    // Right now this creates an array of array pairs. I need to change this to an array of objects
+    // where the objects have two properties: resource and number.
+    // Just thinking this will be better for future.
     const arr = _.zip(shuffledNumbers, shuffledResources);
 
     // Need to push a desert tile.
