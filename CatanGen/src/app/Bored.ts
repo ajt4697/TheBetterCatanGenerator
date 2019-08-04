@@ -1,4 +1,3 @@
-import { NumberFormatStyle } from '@angular/common';
 
 // Writing this in a separate file keeps it more MoDuLaR
 class Bored {
