@@ -24,7 +24,6 @@ export class GeneratorComponent {
     'wood', 'wood', 'wood', 'wood', 'hay', 'hay', 'hay', 'hay'];
     this.numNumbers = 18;
     this.numResources = 18;
-
   }
 
   // When Generate Board button is clicked, this function is called.
