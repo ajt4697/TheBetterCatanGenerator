@@ -14,17 +14,45 @@
 }
 
 
-/* .honeybg {
+.honeybg {
   position: absolute;
   width: 150px;
   height: 160px;
-  filter: grayscale(100%) contrast(110%);
-  -webkit-filter: grayscale(100%) contrast(110%);
   margin-top: 0;
   margin-left: 0;
   right:0px;
   left: 0px;
-} */
+}
+
+.ore {
+  background: #4B4B46;
+  background-size: cover;
+}
+
+.brick {
+  background: #A43728;
+  background-size: cover;
+}
+
+.wood {
+  background: #0D4B1F;
+  background-size: cover;
+}
+
+.hay {
+  background: #F0BF10;
+  background-size: cover;
+}
+
+.sheep {
+  background: #60C92E;
+  background-size: cover;
+}
+
+.desert {
+  background: #BCAC7C;
+  background-size: cover;
+}
 
 
 

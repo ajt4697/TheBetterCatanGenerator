@@ -52,6 +52,13 @@ export class GeneratorComponent {
     // Insert the desert tile.
     tiles.splice(randomNum, 0, desert);
     console.log(tiles);
+    return tiles;
+  }
+
+  // This method will actually 'print' the randomized tiles to the DOM.
+  // It will take in the tiles array as an argument.
+  printTiles(tiles: Array<object>) {
+
 
   }
 
