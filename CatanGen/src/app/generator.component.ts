@@ -41,19 +41,26 @@ export class GeneratorComponent {
     const randomNum = Math.floor(Math.random() * 19);
     // Insert the desert tile.
     this.tiles.splice(randomNum, 0, desert);
-    console.log(this.tiles);
+
+    // Call the printTiles function to then display the resources.
     this.printTiles();
   }
 
   // This method will actually 'print' the randomized tiles to the DOM.
-  // It will take in the tiles array as an argument.
+  // It will use the global tiles variable, filled in the generateBoard() function.
+  // I chose to keep this as a separate method b/c it will be easier for future.
   printTiles() {
     const numTiles = 19;
+    // Iterate through the tiles...
     for (let i = 0; i < numTiles; i ++) {
+      // Grab a single tile by its id.
       const element = document.getElementById('tile' + i);
+      // If the tile already had a resource class assigned...
       if (element.classList.length === 2) {
+        // Remove the resource.
         element.classList.remove(element.classList.item(1));
       }
+      // Push the new resource class!
       element.classList.add(this.tiles[i].res);
     }
   }
