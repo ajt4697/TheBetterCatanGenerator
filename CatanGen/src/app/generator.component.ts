@@ -3,6 +3,26 @@ import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/t
 import * as _ from 'lodash';
 
 
+// A separate class to represent a tile object.
+export class Tile {
+  num: number;
+  res: string;
+
+  constructor(num, res) {
+    this.num = num;
+    this.res = res;
+  }
+
+  getNumber() {
+    return this.num;
+  }
+
+  getResource() {
+    return this.res;
+  }
+}
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './generator.component.html',
@@ -17,9 +37,9 @@ export class GeneratorComponent {
   numResources = 18;
   tiles = [];
 
+
   // When Generate Board button is clicked, this function is called.
   generateBoard() {
-    console.log('Button has been clicked!');
 
     // Shuffle the number and resource arrays to randomize their order.
     const shuffledNumbers = _.shuffle(this.normalNumbers);
@@ -31,20 +51,22 @@ export class GeneratorComponent {
     for (let i = 0; i < this.numNumbers; i++) {
       const numb = shuffledNumbers[i];
       const resource = shuffledResources[i];
-      const tile = {num: numb, res: resource};
-      this.tiles.push(tile);
+      const newTile = new Tile(numb, resource);
+      this.tiles.push(newTile);
     }
 
     // Need to push a desert tile.
-    const desert = {num: 0, res: 'desert'};
+    const desert = new Tile(0, 'desert');
     // Get a random number to represent the random index we will insert the desert at.
     const randomNum = Math.floor(Math.random() * 19);
     // Insert the desert tile.
     this.tiles.splice(randomNum, 0, desert);
+    console.log(this.tiles);
 
     // Call the printTiles function to then display the resources.
     this.printTiles();
   }
+
 
   // This method will actually 'print' the randomized tiles to the DOM.
   // It will use the global tiles variable, filled in the generateBoard() function.
@@ -61,7 +83,10 @@ export class GeneratorComponent {
         element.classList.remove(element.classList.item(1));
       }
       // Push the new resource class!
-      element.classList.add(this.tiles[i].res);
+      element.classList.add(this.tiles[i].getResource());
     }
   }
 }
+
+
+
