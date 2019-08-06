@@ -86,6 +86,15 @@ export class GeneratorComponent {
       element.classList.add(this.tiles[i].getResource());
     }
   }
+
+  getTiles() {
+    return this.tiles;
+  }
+
+  getTileByIndex(idx) {
+    return this.tiles[idx];
+  }
+
 }
 
 

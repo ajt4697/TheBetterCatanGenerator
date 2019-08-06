@@ -11,6 +11,17 @@
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   overflow: hidden;
+  text-align: center;
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  background: #f3f3f3;
+  clip-path: circle(50% at 50% 50%);
+  z-index: 0;
+  display: inline-block;
+  margin-top: 50px;
 }
 
 
