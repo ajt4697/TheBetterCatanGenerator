@@ -40,6 +40,14 @@
   font-family: Georgia;
 }
 
+.red-num {
+  color: #c23838;
+}
+
+
+#genButton {
+}
+
 .ore {
   background: #4B4B46;
   background-size: cover;

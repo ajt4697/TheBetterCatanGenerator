@@ -104,7 +104,7 @@ export class GeneratorComponent implements OnInit {
       // Grab a single chit by its id.
       const element = document.getElementById('chit' + i);
       // Change the inner text of the chit.
-      element.innerHTML = this.getNumberByIndex(i).toString();
+      element.textContent = this.getNumberByIndex(i).toString();
     }
   }
 
