@@ -1,6 +1,7 @@
 #hcholder {
   width: 1000px;
   height: 1000px;
+  margin-left: 100px;
 }
 
 .honeycomb {
@@ -14,6 +15,16 @@
   text-align: center;
 }
 
+.honeybg {
+  position: absolute;
+  width: 150px;
+  height: 160px;
+  margin-top: 0;
+  margin-left: 0;
+  right:0px;
+  left: 0px;
+}
+
 .circle {
   width: 60px;
   height: 60px;
@@ -24,15 +35,9 @@
   margin-top: 50px;
 }
 
-
-.honeybg {
-  position: absolute;
-  width: 150px;
-  height: 160px;
-  margin-top: 0;
-  margin-left: 0;
-  right:0px;
-  left: 0px;
+.chit {
+  margin-top: 18px;
+  font-family: Georgia;
 }
 
 .ore {
