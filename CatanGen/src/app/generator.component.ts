@@ -34,20 +34,40 @@ export class GeneratorComponent implements OnInit {
   normalNumbers = [2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12];
   normalResources = ['ore', 'ore', 'ore', 'brick', 'brick', 'brick', 'sheep', 'sheep', 'sheep', 'sheep',
   'wood', 'wood', 'wood', 'wood', 'hay', 'hay', 'hay', 'hay'];
-  numNumbers = 18;
-  numResources = 18;
+  numNormalNumbers = 18;
+  numNormalResources = 18;
+
+  extensionNumbers = [2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 8, 8, 8, 9, 9, 9,
+                      10, 10, 10, 11, 11, 11, 12, 12];
+  extensionResources = ['ore', 'ore', 'ore', 'ore', 'ore',
+                        'brick', 'brick', 'brick', 'brick', 'brick',
+                        'sheep', 'sheep', 'sheep', 'sheep', 'sheep', 'sheep',
+                        'wood', 'wood', 'wood', 'wood', 'wood', 'wood',
+                        'hay', 'hay', 'hay', 'hay', 'hay', 'hay'];
+  numExtNumbers = 28;
+  numExtResources = 28;
+
   tiles: Array<Tile>;
+  mode = 'normal';
 
   // This is a lifecycle hook function.
   // To avoid errors with the ngIf directives in the HTML file,
   // call generateBoard() as soon as the page is initialized.
   ngOnInit() {
-    this.generateBoard();
+    this.generateBoard('normal');
   }
 
   // When Generate Board button is clicked, this function is called.
-  generateBoard() {
+  generateBoard(mode: string) {
+    if (mode === 'normal') {
+      this.generateNormal();
+    } else if (mode === 'extension') {
+      this.generateExtension();
+    }
 
+  }
+
+  generateNormal() {
     // Shuffle the number and resource arrays to randomize their order.
     const shuffledNumbers = _.shuffle(this.normalNumbers);
     const shuffledResources = _.shuffle(this.normalResources);
@@ -55,7 +75,7 @@ export class GeneratorComponent implements OnInit {
     // Iterate through the shuffledNumbers and create tiles with the corresponding
     // resource from shuffledNumbers.
     this.tiles = [];
-    for (let i = 0; i < this.numNumbers; i++) {
+    for (let i = 0; i < this.numNormalNumbers; i++) {
       const numb = shuffledNumbers[i];
       const resource = shuffledResources[i];
       const newTile = new Tile(numb, resource);
@@ -74,6 +94,40 @@ export class GeneratorComponent implements OnInit {
     this.printResources();
     // this.printNumbers();
   }
+
+
+  generateExtension() {
+    // Shuffle the number and resource arrays to randomize their order.
+    const shuffledNumbers = _.shuffle(this.extensionNumbers);
+    const shuffledResources = _.shuffle(this.extensionResources);
+
+    // Iterate through the shuffledNumbers and create tiles with the corresponding
+    // resource from shuffledNumbers.
+    this.tiles = [];
+    for (let i = 0; i < this.numExtNumbers; i++) {
+      const numb = shuffledNumbers[i];
+      const resource = shuffledResources[i];
+      const newTile = new Tile(numb, resource);
+      this.tiles.push(newTile);
+    }
+
+    // Need to push two desert tiles.
+    const desert1 = new Tile(0, 'desert');
+    const desert2 = new Tile(0, 'desert');
+    // Get two random numbers to represent the random indices we will insert the deserts at.
+    const randomNum1 = Math.floor(Math.random() * 29);
+    const randomNum2 = Math.floor(Math.random() * 30);
+    // Insert the desert tiles.
+    this.tiles.splice(randomNum1, 0, desert1);
+    this.tiles.splice(randomNum2, 0, desert2);
+    console.log(this.tiles);
+
+    // Call the printTiles function to then display the resources.
+    // this.printResources();
+    // this.printNumbers();
+
+  }
+
 
 
   // This method will actually 'print' the randomized resources to the DOM.
@@ -114,17 +168,17 @@ export class GeneratorComponent implements OnInit {
   }
 
   // Returns specified Tile object from the tiles array.
-  getTileByIndex(idx) {
+  getTileByIndex(idx: number) {
     return this.tiles[idx];
   }
 
   // Returns the resource of specified Tile object.
-  getResourceByIndex(idx) {
+  getResourceByIndex(idx: number) {
     return this.tiles[idx].getResource();
   }
 
   // Returns the number of specified Tile object.
-  getNumberByIndex(idx) {
+  getNumberByIndex(idx: number) {
     return this.tiles[idx].getNumber();
   }
 

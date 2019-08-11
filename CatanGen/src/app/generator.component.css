@@ -1,3 +1,10 @@
+/* #site-ui {
+} */
+
+#welcome-banner {
+  text-align: center;
+}
+
 #hcholder {
   width: 1000px;
   height: 1000px;
@@ -44,8 +51,19 @@
   color: #c23838;
 }
 
+#generate-area {
+  margin-bottom: 40px;
+}
+
 
 #genButton {
+}
+
+#content-holder {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .ore {

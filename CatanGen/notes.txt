@@ -6,10 +6,19 @@ implementing, etc.
 TO-DO:
 ------------------------------------------------------------------------
 
-+ I want to create an actual object for tiles, not just a basic one. (8/3/19)
+ + Make the numbers 8 and 6 red.
+ + Make it so three of same resources cannot touch.
+ + Add ports to the UI along the board.
 
+Options:
+ + Normal vs. Expansion
+ + True Random vs. Rule Abiding (three of same resource no touch)
+ + Ports Showing vs. No Ports Showing
+ + Randomize Ports vs. Set Ports
+ + Desert in Center vs. Random Placement
 
-
+ + EVENTUALLY keep track of initial settlement placements and analyze
+   what makes a good placement strategy?
 
 
 
@@ -20,5 +29,8 @@ NOTES:
 
 + The honeycomb styling code is from this link:
   https://codepen.io/rowanrp/pen/wmvqjr
+
++ Super helpful page about CSS Flexbox:
+  https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 
