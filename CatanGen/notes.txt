@@ -6,13 +6,16 @@ implementing, etc.
 TO-DO:
 ------------------------------------------------------------------------
 
+ + Switch desert checking and number printing all to TS file, not HTML.
  + Make the numbers 8 and 6 red.
  + Make it so three of same resources cannot touch.
  + Add ports to the UI along the board.
 
-Options:
+Options (use an Angular form for options to get live values?):
  + Normal vs. Expansion
  + True Random vs. Rule Abiding (three of same resource no touch)
+    - For Rule Abiding, check each set of three adjacent tiles, and simply regen
+      if it violates this rule.
  + Ports Showing vs. No Ports Showing
  + Randomize Ports vs. Set Ports
  + Desert in Center vs. Random Placement

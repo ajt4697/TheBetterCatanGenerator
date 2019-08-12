@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import * as _ from 'lodash';
 
 
@@ -23,14 +23,13 @@ export class Tile {
   }
 }
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './generator.component.html',
   styleUrls: ['./generator.component.css']
 
 })
-export class GeneratorComponent implements OnInit {
+export class GeneratorComponent implements OnInit, AfterViewInit {
   normalNumbers = [2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12];
   normalResources = ['ore', 'ore', 'ore', 'brick', 'brick', 'brick', 'sheep', 'sheep', 'sheep', 'sheep',
   'wood', 'wood', 'wood', 'wood', 'hay', 'hay', 'hay', 'hay'];
@@ -54,7 +53,11 @@ export class GeneratorComponent implements OnInit {
   // To avoid errors with the ngIf directives in the HTML file,
   // call generateBoard() as soon as the page is initialized.
   ngOnInit() {
-    this.generateBoard('normal');
+    this.generateBoard(this.getMode());
+  }
+
+  ngAfterViewInit() {
+    // this.generateBoard(this.getMode());
   }
 
   // When Generate Board button is clicked, this function is called.
@@ -123,7 +126,7 @@ export class GeneratorComponent implements OnInit {
     console.log(this.tiles);
 
     // Call the printTiles function to then display the resources.
-    // this.printResources();
+    this.printResources();
     // this.printNumbers();
 
   }
@@ -134,7 +137,7 @@ export class GeneratorComponent implements OnInit {
   // It will use the global tiles variable, filled in the generateBoard() function.
   // I chose to keep this as a separate method b/c it will be easier for future.
   printResources() {
-    const numTiles = 19;
+    const numTiles = this.getMode() === 'normal' ? 19 : 30;
     // Iterate through the tiles...
     for (let i = 0; i < numTiles; i ++) {
       // Grab a single tile by its id.
@@ -152,7 +155,7 @@ export class GeneratorComponent implements OnInit {
   // This function was made to assign numbers to the chits.
   // It's not working right now, so now I use text binding in the HTML file.
   printNumbers() {
-    const numChits = 19;
+    const numChits = this.getMode() === 'normal' ? 19 : 30;
     // Iterate through the chits...
     for (let i = 0; i < numChits; i++) {
       // Grab a single chit by its id.
@@ -180,6 +183,10 @@ export class GeneratorComponent implements OnInit {
   // Returns the number of specified Tile object.
   getNumberByIndex(idx: number) {
     return this.tiles[idx].getNumber();
+  }
+
+  getMode() {
+    return this.mode;
   }
 
 }
