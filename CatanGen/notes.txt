@@ -1,12 +1,18 @@
 In his file we can keep track of things we want to do/aren't done
 implementing, etc.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------------------------------------
+ERRORS TO FIX (& SOLUTIONS):
+------------------------------------------------------------------------
+ + NgOnInit throws an error because printResources() can't select an
+   element that isn't rendered yet (bc dependent on the ngIf for mode).
+    -> Switch desert checking and number printing all to TS file, not HTML.
+
 
 ------------------------------------------------------------------------
 TO-DO:
 ------------------------------------------------------------------------
 
- + Switch desert checking and number printing all to TS file, not HTML.
  + Make the numbers 8 and 6 red.
  + Make it so three of same resources cannot touch.
  + Add ports to the UI along the board.
