@@ -11,9 +11,9 @@
 
     <div id="generate-area">
       <p>Select Generation Options:</p>
-      <input type="radio" name="mode" value="normal" (click)="toggleMode()">Normal
+      <input type="radio" name="mode" value="normal" (click)="toggleMode()" checked="checked">Normal
       <span> vs.</span>
-      <input type="radio" name="mode" value="extension" (click)="toggleMode()">Extension
+      <input type="radio" name="mode" value="extension" (click)="toggleMode()" >Extension
       <br>
       <button id="genButton" (click)="generateBoard(mode)">Generate Board</button>
     </div>

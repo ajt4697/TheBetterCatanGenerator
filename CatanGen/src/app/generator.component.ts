@@ -47,7 +47,7 @@ export class GeneratorComponent implements OnInit, AfterViewInit {
   numExtResources = 28;
 
   tiles: Array<Tile>;
-  mode = 'extension';
+  mode = 'normal';
 
   // This is a lifecycle hook function.
   // To avoid errors with the ngIf directives in the HTML file,
@@ -123,7 +123,7 @@ export class GeneratorComponent implements OnInit, AfterViewInit {
     // Insert the desert tiles.
     this.tiles.splice(randomNum1, 0, desert1);
     this.tiles.splice(randomNum2, 0, desert2);
-    console.log(this.tiles);
+    // console.log(this.tiles);
 
     // Call the printTiles function to then display the resources.
     this.printResources();
@@ -143,6 +143,7 @@ export class GeneratorComponent implements OnInit, AfterViewInit {
       // Grab a single tile by its id.
       const tileID = this.getMode() === 'normal' ? 'tile' : 'etile';
       const element = document.getElementById(tileID + i);
+      // console.log(element);
       // If the tile already had a resource class assigned...
       if (element.classList.length === 2) {
         // Remove the resource.
