@@ -10,9 +10,11 @@
   <div id="content-holder">
 
     <div id="generate-area">
-      <!-- <p>Select Generation Options:</p>
-      <input type="radio">Normal <span> vs.</span> <input type="radio">Extension
-      <br> -->
+      <p>Select Generation Options:</p>
+      <input type="radio" name="mode" value="normal" (click)="toggleMode()">Normal
+      <span> vs.</span>
+      <input type="radio" name="mode" value="extension" (click)="toggleMode()">Extension
+      <br>
       <button id="genButton" (click)="generateBoard(mode)">Generate Board</button>
     </div>
 
@@ -272,7 +274,7 @@
         </div>
       </div>
 
-      <div class="honeycomb" style="margin-top: 373px; margin-left: 154px; ">
+      <div class="honeycomb" style="margin-top: 373px; margin-left: 0px; ">
         <div id="etile12" class="honeybg">
           <div *ngIf = "getResourceByIndex(12) !== 'desert'" class="circle">
             <p id="echit12" class="chit">{{getNumberByIndex(12)}}</p>
@@ -280,7 +282,7 @@
         </div>
       </div>
 
-      <div class="honeycomb" style="margin-top: 373px; margin-left: 309px; ">
+      <div class="honeycomb" style="margin-top: 373px; margin-left: 154px; ">
         <div id="etile13" class="honeybg">
           <div *ngIf = "getResourceByIndex(13) !== 'desert'" class="circle">
             <p id="echit13" class="chit">{{getNumberByIndex(13)}}</p>
@@ -288,7 +290,7 @@
         </div>
       </div>
 
-      <div class="honeycomb" style="margin-top: 373px; margin-left: 464px; ">
+      <div class="honeycomb" style="margin-top: 373px; margin-left: 309px; ">
         <div id="etile14" class="honeybg">
           <div *ngIf = "getResourceByIndex(14) !== 'desert'" class="circle">
             <p id="echit14" class="chit">{{getNumberByIndex(14)}}</p>
@@ -296,7 +298,7 @@
         </div>
       </div>
 
-      <div class="honeycomb" style="margin-top: 373px; margin-left: 619px; ">
+      <div class="honeycomb" style="margin-top: 373px; margin-left: 464px; ">
         <div id="etile15" class="honeybg">
           <div *ngIf = "getResourceByIndex(15) !== 'desert'" class="circle">
             <p id="echit15" class="chit">{{getNumberByIndex(15)}}</p>
@@ -304,7 +306,7 @@
         </div>
       </div>
 
-      <div class="honeycomb" style="margin-top: 497px; margin-left: 232px; ">
+      <div class="honeycomb" style="margin-top: 373px; margin-left: 619px; ">
         <div id="etile16" class="honeybg">
           <div *ngIf = "getResourceByIndex(16) !== 'desert'" class="circle">
             <p id="echit16" class="chit">{{getNumberByIndex(16)}}</p>
@@ -312,7 +314,7 @@
         </div>
       </div>
 
-      <div class="honeycomb" style="margin-top: 497px; margin-left: 387px; ">
+      <div class="honeycomb" style="margin-top: 373px; margin-left: 774px; ">
         <div id="etile17" class="honeybg">
           <div *ngIf = "getResourceByIndex(17) !== 'desert'" class="circle">
             <p id="echit17" class="chit">{{getNumberByIndex(17)}}</p>
@@ -320,7 +322,7 @@
         </div>
       </div>
 
-      <div class="honeycomb" style="margin-top: 497px; margin-left: 542px; ">
+      <div class="honeycomb" style="margin-top: 497px; margin-left: 77px; ">
         <div id="etile18" class="honeybg">
           <div *ngIf = "getResourceByIndex(18) !== 'desert'" class="circle">
             <p id="echit18" class="chit">{{getNumberByIndex(18)}}</p>
@@ -328,7 +330,7 @@
         </div>
       </div>
 
-      <div class="honeycomb" style="margin-top: 373px; margin-left: 0px; ">
+      <div class="honeycomb" style="margin-top: 497px; margin-left: 232px; ">
         <div id="etile19" class="honeybg">
           <div *ngIf = "getResourceByIndex(19) !== 'desert'" class="circle">
             <p id="echit19" class="chit">{{getNumberByIndex(19)}}</p>
@@ -336,13 +338,87 @@
         </div>
       </div>
 
-      <div class="honeycomb" style="margin-top: 497px; margin-left: 77px; ">
+      <div class="honeycomb" style="margin-top: 497px; margin-left: 387px; ">
         <div id="etile20" class="honeybg">
           <div *ngIf = "getResourceByIndex(20) !== 'desert'" class="circle">
             <p id="echit20" class="chit">{{getNumberByIndex(20)}}</p>
           </div>
         </div>
       </div>
+
+      <div class="honeycomb" style="margin-top: 497px; margin-left: 542px; ">
+        <div id="etile21" class="honeybg">
+          <div *ngIf = "getResourceByIndex(21) !== 'desert'" class="circle">
+            <p id="echit21" class="chit">{{getNumberByIndex(21)}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="honeycomb" style="margin-top: 497px; margin-left: 697px; ">
+        <div id="etile22" class="honeybg">
+          <div *ngIf = "getResourceByIndex(22) !== 'desert'" class="circle">
+            <p id="echit22" class="chit">{{getNumberByIndex(22)}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="honeycomb" style="margin-top: 621px; margin-left: 154px; ">
+        <div id="etile23" class="honeybg">
+          <div *ngIf = "getResourceByIndex(23) !== 'desert'" class="circle">
+            <p id="echit23" class="chit">{{getNumberByIndex(23)}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="honeycomb" style="margin-top: 621px; margin-left: 309px; ">
+        <div id="etile24" class="honeybg">
+          <div *ngIf = "getResourceByIndex(24) !== 'desert'" class="circle">
+            <p id="echit24" class="chit">{{getNumberByIndex(24)}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="honeycomb" style="margin-top: 621px; margin-left: 464px; ">
+        <div id="etile25" class="honeybg">
+          <div *ngIf = "getResourceByIndex(25) !== 'desert'" class="circle">
+            <p id="echit25" class="chit">{{getNumberByIndex(25)}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="honeycomb" style="margin-top: 621px; margin-left: 619px; ">
+        <div id="etile26" class="honeybg">
+          <div *ngIf = "getResourceByIndex(26) !== 'desert'" class="circle">
+            <p id="echit26" class="chit">{{getNumberByIndex(26)}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="honeycomb" style="margin-top: 745px; margin-left: 232px; ">
+        <div id="etile27" class="honeybg">
+          <div *ngIf = "getResourceByIndex(27) !== 'desert'" class="circle">
+            <p id="echit27" class="chit">{{getNumberByIndex(27)}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="honeycomb" style="margin-top: 745px; margin-left: 387px; ">
+        <div id="etile28" class="honeybg">
+          <div *ngIf = "getResourceByIndex(28) !== 'desert'" class="circle">
+            <p id="echit28" class="chit">{{getNumberByIndex(28)}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="honeycomb" style="margin-top: 745px; margin-left: 542px; ">
+        <div id="etile29" class="honeybg">
+          <div *ngIf = "getResourceByIndex(29) !== 'desert'" class="circle">
+            <p id="echit29" class="chit">{{getNumberByIndex(29)}}</p>
+          </div>
+        </div>
+      </div>
+
+
 
     </div>
 

@@ -47,7 +47,7 @@ export class GeneratorComponent implements OnInit, AfterViewInit {
   numExtResources = 28;
 
   tiles: Array<Tile>;
-  mode = 'normal';
+  mode = 'extension';
 
   // This is a lifecycle hook function.
   // To avoid errors with the ngIf directives in the HTML file,
@@ -141,7 +141,8 @@ export class GeneratorComponent implements OnInit, AfterViewInit {
     // Iterate through the tiles...
     for (let i = 0; i < numTiles; i ++) {
       // Grab a single tile by its id.
-      const element = document.getElementById('tile' + i);
+      const tileID = this.getMode() === 'normal' ? 'tile' : 'etile';
+      const element = document.getElementById(tileID + i);
       // If the tile already had a resource class assigned...
       if (element.classList.length === 2) {
         // Remove the resource.
@@ -159,7 +160,8 @@ export class GeneratorComponent implements OnInit, AfterViewInit {
     // Iterate through the chits...
     for (let i = 0; i < numChits; i++) {
       // Grab a single chit by its id.
-      const element = document.getElementById('chit' + i);
+      const chitID = this.getMode() === 'normal' ? 'chit' : 'echit';
+      const element = document.getElementById('chitID' + i);
       // Change the inner text of the chit.
       element.textContent = this.getNumberByIndex(i).toString();
     }
@@ -187,6 +189,16 @@ export class GeneratorComponent implements OnInit, AfterViewInit {
 
   getMode() {
     return this.mode;
+  }
+
+  toggleMode() {
+    if (this.mode === 'normal') {
+      this.mode = 'extension';
+      this.generateExtension();
+    } else if (this.mode === 'extension') {
+      this.mode = 'normal';
+      this.generateNormal();
+    }
   }
 
 }

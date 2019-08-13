@@ -59,10 +59,13 @@
 
 #generate-area {
   margin-bottom: 40px;
+  /* display: flex;
+  align-content: center; */
 }
 
 
 #genButton {
+
 }
 
 #content-holder {
