@@ -7,7 +7,7 @@ ERRORS TO FIX (& SOLUTIONS):
  + NgOnInit throws an error because printResources() can't select an
    element that isn't rendered yet (bc dependent on the ngIf for mode).
 
- + Selecting an already selected radio button toggles the option anyway.
+ + Changing mode from Normal to Extension throws an error with printResource().
 
 
 ------------------------------------------------------------------------
@@ -15,7 +15,6 @@ TO-DO:
 ------------------------------------------------------------------------
 
  + Make the numbers 8 and 6 red.
- + Make it so three of same resources cannot touch.
  + Add ports to the UI along the board.
 
 Options (use an Angular form for options to get live values?):
