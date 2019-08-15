@@ -11,11 +11,15 @@
 
     <div id="generate-area">
       <p>Select Generation Options:</p>
-      <input type="radio" name="mode" value="normal" (click)="toggleMode()" checked="checked">Normal
+      <input type="radio" name="mode" value="normal" (click)="toggleToNormal()" checked="checked">Normal
       <span> vs.</span>
-      <input type="radio" name="mode" value="extension" (click)="toggleMode()" >Extension
+      <input type="radio" name="mode" value="extension" (click)="toggleToExtension()" >Extension
       <br>
-      <button id="genButton" (click)="generateBoard(mode)">Generate Board</button>
+      <input type="radio" name="threeTouchAllowed" value="true" (click)="toggleToTrueRandom()" checked="checked">True Random
+      <span> vs.</span>
+      <input type="radio" name="threeTouchAllowed" value="false" (click)="toggleToRuleAbiding()" >Rule Abiding
+      <br>
+      <button id="genButton" (click)="generateBoard()">Generate Board</button>
     </div>
 
     <div *ngIf = "getMode() === 'normal'" id="hcholder">

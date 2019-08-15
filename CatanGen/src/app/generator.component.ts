@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { normalTriples, extensionTriples } from './lib/triples';
 import * as _ from 'lodash';
 
 
@@ -45,15 +46,16 @@ export class GeneratorComponent implements OnInit, AfterViewInit {
                         'hay', 'hay', 'hay', 'hay', 'hay', 'hay'];
   numExtNumbers = 28;
   numExtResources = 28;
-
   tiles: Array<Tile>;
+
   mode = 'normal';
+  threeTouchAllowed = true;
 
   // This is a lifecycle hook function.
   // To avoid errors with the ngIf directives in the HTML file,
   // call generateBoard() as soon as the page is initialized.
   ngOnInit() {
-    this.generateBoard(this.getMode());
+    this.generateBoard();
   }
 
   ngAfterViewInit() {
@@ -61,10 +63,10 @@ export class GeneratorComponent implements OnInit, AfterViewInit {
   }
 
   // When Generate Board button is clicked, this function is called.
-  generateBoard(mode: string) {
-    if (mode === 'normal') {
+  generateBoard() {
+    if (this.getMode() === 'normal') {
       this.generateNormal();
-    } else if (mode === 'extension') {
+    } else if (this.getMode() === 'extension') {
       this.generateExtension();
     }
 
@@ -96,6 +98,9 @@ export class GeneratorComponent implements OnInit, AfterViewInit {
     // Call the printTiles function to then display the resources.
     this.printResources();
     // this.printNumbers();
+    if (this.threeTouchAllowed === false) {
+      this.threeTouchCheck();
+    }
   }
 
 
@@ -128,6 +133,9 @@ export class GeneratorComponent implements OnInit, AfterViewInit {
     // Call the printTiles function to then display the resources.
     this.printResources();
     // this.printNumbers();
+    if (this.threeTouchAllowed === false) {
+      this.threeTouchCheck();
+    }
 
   }
 
@@ -192,14 +200,66 @@ export class GeneratorComponent implements OnInit, AfterViewInit {
     return this.mode;
   }
 
-  toggleMode() {
-    if (this.mode === 'normal') {
-      this.mode = 'extension';
-      this.generateExtension();
-    } else if (this.mode === 'extension') {
-      this.mode = 'normal';
-      this.generateNormal();
+  toggleToNormal() {
+    this.mode = 'normal';
+  }
+
+  toggleToExtension() {
+    this.mode = 'extension';
+  }
+
+  toggleToTrueRandom() {
+    this.threeTouchAllowed = true;
+  }
+
+  toggleToRuleAbiding() {
+    this.threeTouchAllowed = false;
+  }
+
+  // Goes through each triple and checks if three tiles of same resource
+  // are touching. If so, the board is just regenerated, and checked again.
+  threeTouchCheck() {
+
+    if (this.getMode() === 'normal') {
+      // Iterate through the array of triples.
+      for (let i = 0; i < normalTriples.length; i++) {
+
+        // Get the current triple and each tile's resource in that triple.
+        const currTriple = normalTriples[i];
+        const tileRes1 = this.getResourceByIndex(currTriple[0]);
+        const tileRes2 = this.getResourceByIndex(currTriple[1]);
+        const tileRes3 = this.getResourceByIndex(currTriple[2]);
+
+        // If the tiles' resources all match, regenerate the board.
+        if (tileRes1 === tileRes2 && tileRes1 === tileRes3 && tileRes2 === tileRes3) {
+          console.log('bad boy');
+          this.generateBoard();
+        }
+
+      }
+
+    } else if (this.getMode() === 'extension') {
+      // Iterate through the array of triples.
+      for (let i = 0; i < extensionTriples.length; i++) {
+
+        // Get the current triple and each tile's resource in that triple.
+        const currTriple = extensionTriples[i];
+        const tileRes1 = this.getResourceByIndex(currTriple[0]);
+        const tileRes2 = this.getResourceByIndex(currTriple[1]);
+        const tileRes3 = this.getResourceByIndex(currTriple[2]);
+
+        // If the tiles' resources all match, regenerate the board.
+        if (tileRes1 === tileRes2 && tileRes1 === tileRes3 && tileRes2 === tileRes3) {
+          console.log('bad boy');
+          this.generateBoard();
+        }
+
+      }
+
     }
+
+
+
   }
 
 }

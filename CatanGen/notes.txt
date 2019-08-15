@@ -7,6 +7,8 @@ ERRORS TO FIX (& SOLUTIONS):
  + NgOnInit throws an error because printResources() can't select an
    element that isn't rendered yet (bc dependent on the ngIf for mode).
 
+ + Selecting an already selected radio button toggles the option anyway.
+
 
 ------------------------------------------------------------------------
 TO-DO:
