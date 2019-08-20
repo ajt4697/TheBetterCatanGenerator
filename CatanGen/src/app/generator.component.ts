@@ -72,6 +72,7 @@ export class GeneratorComponent implements OnInit, AfterViewInit {
 
   }
 
+  // Generates the tiles for the normal board.
   generateNormal() {
     // Shuffle the number and resource arrays to randomize their order.
     const shuffledNumbers = _.shuffle(this.normalNumbers);
@@ -103,7 +104,7 @@ export class GeneratorComponent implements OnInit, AfterViewInit {
     }
   }
 
-
+  // Generates the tiles for the extension board.
   generateExtension() {
     // Shuffle the number and resource arrays to randomize their order.
     const shuffledNumbers = _.shuffle(this.extensionNumbers);
