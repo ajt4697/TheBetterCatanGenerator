@@ -1,0 +1,109 @@
+/* #site-ui {
+} */
+
+#welcome-banner {
+  text-align: center;
+}
+
+#hcholder {
+  width: 1000px;
+  height: 1000px;
+  margin-left: 40px;
+}
+
+#ehcholder {
+  width: 1000px;
+  height: 1000px;
+  margin-left: 40px;
+}
+
+.honeycomb {
+  position: absolute;
+  width: 150px;
+  height: 160px;
+  background: #202020;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  overflow: hidden;
+  text-align: center;
+}
+
+.honeybg {
+  position: absolute;
+  width: 150px;
+  height: 160px;
+  margin-top: 0;
+  margin-left: 0;
+  right:0px;
+  left: 0px;
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  background: #f3f3f3;
+  clip-path: circle(50% at 50% 50%);
+  z-index: 0;
+  display: inline-block;
+  margin-top: 50px;
+}
+
+.chit {
+  margin-top: 18px;
+  font-family: Georgia;
+}
+
+.red-num {
+  color: #c23838;
+}
+
+#generate-area {
+  margin-bottom: 40px;
+  /* display: flex;
+  align-content: center; */
+}
+
+
+#genButton {
+
+}
+
+#content-holder {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ore {
+  background: #4B4B46;
+  background-size: cover;
+}
+
+.brick {
+  background: #A43728;
+  background-size: cover;
+}
+
+.wood {
+  background: #0D4B1F;
+  background-size: cover;
+}
+
+.hay {
+  background: #F0BF10;
+  background-size: cover;
+}
+
+.sheep {
+  background: #60C92E;
+  background-size: cover;
+}
+
+.desert {
+  background: #BCAC7C;
+  background-size: cover;
+}
+
+
+

@@ -1,0 +1,45 @@
+In his file we can keep track of things we want to do/aren't done
+implementing, etc.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------------------------------------
+ERRORS TO FIX (& SOLUTIONS):
+------------------------------------------------------------------------
+ + NgOnInit throws an error because printResources() can't select an
+   element that isn't rendered yet (bc dependent on the ngIf for mode).
+
+ + Changing mode from Normal to Extension throws an error with printResource().
+
+
+------------------------------------------------------------------------
+TO-DO:
+------------------------------------------------------------------------
+
+ + Make the numbers 8 and 6 red.
+ + Add ports to the UI along the board.
+
+Options (use an Angular form for options to get live values?):
+ + Normal vs. Expansion
+ + True Random vs. Rule Abiding (three of same resource no touch)
+    - For Rule Abiding, check each set of three adjacent tiles, and simply regen
+      if it violates this rule.
+ + Ports Showing vs. No Ports Showing
+ + Randomize Ports vs. Set Ports
+ + Desert in Center vs. Random Placement
+
+ + EVENTUALLY keep track of initial settlement placements and analyze
+   what makes a good placement strategy?
+
+
+
+
+------------------------------------------------------------------------
+NOTES:
+------------------------------------------------------------------------
+
++ The honeycomb styling code is from this link:
+  https://codepen.io/rowanrp/pen/wmvqjr
+
++ Super helpful page about CSS Flexbox:
+  https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
