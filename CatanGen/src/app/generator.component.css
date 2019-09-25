@@ -70,6 +70,7 @@
 
 #content-holder {
   display: flex;
+  background: red;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
@@ -105,5 +106,15 @@
   background-size: cover;
 }
 
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+  /* Styles */
 
-
+  #content-holder {
+    display: flex;
+    background: blue;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  }
