@@ -3,12 +3,56 @@
 
 #welcome-banner {
   text-align: center;
+  margin-bottom: 0px;
+  /* display: flex;
+  align-content: center; */
+
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  background:  #ad1457;
+  border: solid  black;
+   border-width: 1px;
+
+  overflow: hidden;
+  box-shadow: -2px -3px 5px rgba(0,0,0,0.3);
+  box-sizing: border-box;
+  color: #fff;
 }
 
 #hcholder {
-  width: 1000px;
-  height: 1000px;
-  margin-left: 40px;
+  width: 100%;
+  height: 70%;;
+  bottom:20%;
+  top:10%;
+  position: fixed;
+  float: right;
+  align-content: center;
+  margin-bottom: 60%;
+
+  background:green;
+  /* margin-left: 40px; */
+  text-align: center;
+  overflow: hidden;
+  border: solid #293241;
+   border-width: 2px 3px;
+
+}
+.board>div>div:before, .board>div>div:after {
+  content:"";
+  background:inherit;
+  display:inline-block;
+  position:absolute;
+  width:1em;
+  height:1em;
+  left:50%;
+  margin-left:-0.5em;
+  box-sizing:border-box;
+  transform-origin:center center;
+  transform:matrix(0.866,0.5,-0.866,0.5,0,0);
+  background-clip:content-box;
 }
 
 #ehcholder {
@@ -17,8 +61,66 @@
   margin-left: 40px;
 }
 
+.row {
+  height: 20%;
+  background: peachpuff;
+}
+
+.row-two {
+  height: 20%;
+  background: darkkhaki;
+}
+
+.row-three {
+  height: 20%;
+  background: #F0BF10;
+}
+
+.honeycomb-temp {
+  /* position: relative;
+  display: inline-block;
+  margin: .25em;
+  width: 150px;
+  height: 160px;
+  background: #202020;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  overflow: hidden;
+  text-align: center; */
+
+  /* content:"";
+  background:inherit;
+  /* display:inline-block; */
+  /* position: relative;
+  width:1em;
+  height:1em;
+  left:50%;
+  background: #F0BF10
+
+  box-sizing:border-box;
+  transform-origin:center center;
+  transform:matrix(0.866,0.5,-0.866,0.5,0,0);
+  background-clip:content-box; */
+
+  position: absolute;
+  position: relative;
+  display: inline-block;
+  margin: 0 .25em;
+  width: 15%;
+  height: 100%;
+  background: #202020;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  overflow: hidden;
+  text-align: center;
+
+}
+
 .honeycomb {
   position: absolute;
+  position: relative;
+  display: inline-block;
+  margin: .25em;
   width: 150px;
   height: 160px;
   background: #202020;
@@ -26,10 +128,12 @@
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   overflow: hidden;
   text-align: center;
+
 }
 
 .honeybg {
   position: absolute;
+
   width: 150px;
   height: 160px;
   margin-top: 0;
@@ -58,9 +162,24 @@
 }
 
 #generate-area {
-  margin-bottom: 40px;
+  margin-bottom: 0px;
   /* display: flex;
   align-content: center; */
+  border: solid #0D4B1F;
+   border-width: 4x;
+
+  position: fixed;
+  bottom:0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background:  #ad1457;
+  /* padding: 30px; */
+  overflow: hidden;
+  box-shadow: -2px -3px 5px rgba(0,0,0,0.3);
+  box-sizing: border-box;
+  color: #fff;
+
 }
 
 
@@ -70,10 +189,13 @@
 
 #content-holder {
   display: flex;
-  background: red;
+  background: blue;
+  height:100%;
+  /* background: red; */
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  overflow:hidden;
 }
 
 .ore {
@@ -106,21 +228,74 @@
   background-size: cover;
 }
 
+#wrap-board {
+  float:right;
+  height:100%;
+  width: 10%;
+  /* If you want text inside of it */
+  background: darkcyan;
+  align-content: center;
+  align-items: center;
+}
+
+.box {
+  position: relative;
+  width:    50%; /* desired width */
+  background: blueviolet;
+}
+
+.box:before {
+  content:     "";
+  display:     block;
+  padding-top: 100%; /* initial ratio of 1:1*/
+  background: blueviolet;
+}
+
+.content {
+  position: absolute;
+
+  top:      0;
+  left:     0;
+  bottom:   0;
+  right:    0;
+}
+
+#tile {
+  display: inline-block;
+
+}
+
 /* Smartphones (portrait) ----------- */
-@media only screen and (min-width : 320px) {
+/* @media only screen and (min-width : 320px) { */
   /* Styles */
 
-  #content-holder {
+  /* #content-holder {
     display: flex;
     background: blue  ;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0;
+    overflow: hidden;
   }
-
   #wrapper {
-    width: 100%;
+
     height:100%;
     background:yellow;
+    margin: 0;
+    overflow: hidden;
   }
+
+
+  } */
+  #wrapper {
+
+    height:100%;
+    width: 100%;
+
+
+    background:yellow;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
   }

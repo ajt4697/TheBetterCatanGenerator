@@ -33,17 +33,17 @@ export class Tile {
 export class GeneratorComponent implements OnInit, AfterViewInit {
   normalNumbers = [2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12];
   normalResources = ['ore', 'ore', 'ore', 'brick', 'brick', 'brick', 'sheep', 'sheep', 'sheep', 'sheep',
-  'wood', 'wood', 'wood', 'wood', 'hay', 'hay', 'hay', 'hay'];
+    'wood', 'wood', 'wood', 'wood', 'hay', 'hay', 'hay', 'hay'];
   numNormalNumbers = 18;
   numNormalResources = 18;
 
   extensionNumbers = [2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 8, 8, 8, 9, 9, 9,
-                      10, 10, 10, 11, 11, 11, 12, 12];
+    10, 10, 10, 11, 11, 11, 12, 12];
   extensionResources = ['ore', 'ore', 'ore', 'ore', 'ore',
-                        'brick', 'brick', 'brick', 'brick', 'brick',
-                        'sheep', 'sheep', 'sheep', 'sheep', 'sheep', 'sheep',
-                        'wood', 'wood', 'wood', 'wood', 'wood', 'wood',
-                        'hay', 'hay', 'hay', 'hay', 'hay', 'hay'];
+    'brick', 'brick', 'brick', 'brick', 'brick',
+    'sheep', 'sheep', 'sheep', 'sheep', 'sheep', 'sheep',
+    'wood', 'wood', 'wood', 'wood', 'wood', 'wood',
+    'hay', 'hay', 'hay', 'hay', 'hay', 'hay'];
   numExtNumbers = 28;
   numExtResources = 28;
   tiles: Array<Tile>;
@@ -148,7 +148,7 @@ export class GeneratorComponent implements OnInit, AfterViewInit {
   printResources() {
     const numTiles = this.getMode() === 'normal' ? 19 : 30;
     // Iterate through the tiles...
-    for (let i = 0; i < numTiles; i ++) {
+    for (let i = 0; i < numTiles; i++) {
       // Grab a single tile by its id.
       const tileID = this.getMode() === 'normal' ? 'tile' : 'etile';
       const element = document.getElementById(tileID + i);
@@ -264,6 +264,3 @@ export class GeneratorComponent implements OnInit, AfterViewInit {
   }
 
 }
-
-
-
