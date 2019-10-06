@@ -6,7 +6,6 @@
   margin-bottom: 0px;
   /* display: flex;
   align-content: center; */
-
   position: fixed;
   top:0;
   left: 0;
@@ -14,13 +13,101 @@
   height: 10%;
   background:  #ad1457;
   border: solid  black;
-   border-width: 1px;
-
+  border-width: 1px;
   overflow: hidden;
   box-shadow: -2px -3px 5px rgba(0,0,0,0.3);
   box-sizing: border-box;
   color: #fff;
 }
+
+
+
+
+
+@media all and (orientation: landscape) {
+
+  #holder:before {
+    width:100px;
+  }
+  #holder {
+    height:90%;
+
+
+
+    background: rgb(94, 255, 30);
+  }
+
+  .row {
+
+    height: 20%;
+    position: relative;
+    background: peachpuff;
+  }
+}
+
+@media all and (orientation: portrait) {
+
+  #holder {
+
+    width:95%;
+    position: relative;
+    left:2.5%;
+    padding-bottom:95%;
+    height:0;
+    background: rgb(94, 0, 30);
+  }
+
+  .row {
+
+    padding-bottom:20%;
+    position: relative;
+    background: peachpuff;
+    text-align: center;
+    box-sizing:border-box;
+  }
+  .row:after {
+
+    padding-bottom:20%;
+    background: peachpuff;
+    text-align: center;
+    box-sizing:border-box;
+  }
+  .honeycomb-tempp {
+    /* position: relative; */
+    /* box-sizing:border-box; */
+    display: inline-block;
+    padding:0;
+    /* margin: 0 .25em; */
+    margin:0;
+
+
+    width: 15%;
+    height: 80%;
+    bottom:10%;
+
+    background: #202020;
+    /* -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); */
+    overflow: hidden;
+    /* text-align: center; */
+  }
+
+  .circlee {
+
+    width: 30px;
+    height: 30px;
+
+    background: #f3f3f3;
+    clip-path: circle(50% at 50% 50%);
+    z-index: 0;
+    margin: 10px 10px;
+
+  }
+}
+
+
+
+
 
 #hcholder {
   width: 100%;
@@ -31,7 +118,6 @@
   float: right;
   align-content: center;
   margin-bottom: 60%;
-
   background:green;
   /* margin-left: 40px; */
   text-align: center;
@@ -61,10 +147,7 @@
   margin-left: 40px;
 }
 
-.row {
-  height: 20%;
-  background: peachpuff;
-}
+
 
 .row-two {
   height: 20%;
@@ -77,81 +160,83 @@
   background: #F0BF10;
 }
 
+
+
+
 .honeycomb-temp {
-  /* position: relative;
-  display: inline-block;
-  margin: .25em;
-  width: 150px;
-  height: 160px;
-  background: #202020;
-  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  overflow: hidden;
-  text-align: center; */
-
-  /* content:"";
-  background:inherit;
-  /* display:inline-block; */
-  /* position: relative;
-  width:1em;
-  height:1em;
-  left:50%;
-  background: #F0BF10
-
-  box-sizing:border-box;
-  transform-origin:center center;
-  transform:matrix(0.866,0.5,-0.866,0.5,0,0);
-  background-clip:content-box; */
-
   position: absolute;
   position: relative;
   display: inline-block;
   margin: 0 .25em;
   width: 15%;
   height: 100%;
+
+  width: 100px;
+  height: 100px;
+
   background: #202020;
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   overflow: hidden;
-  text-align: center;
-
+  /* text-align: center; */
 }
 
-.honeycomb {
+.circle-temp {
   position: absolute;
   position: relative;
   display: inline-block;
-  margin: .25em;
-  width: 150px;
-  height: 160px;
+  margin: 0 .25em;
+  width: 15%;
+  height: 100%;
+
+  width: 100px;
+  height: 100px;
+
   background: #202020;
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   overflow: hidden;
-  text-align: center;
 
+  width: 40px;
+  height: 40px;
+
+  background: #db7070;
+  clip-path: circle(50% at 50% 50%);
+  z-index: 0;
+  display: inline-block;
+  vertical-align: auto;
+  /* text-align: center; */
 }
 
-.honeybg {
-  position: absolute;
 
-  width: 150px;
-  height: 160px;
-  margin-top: 0;
-  margin-left: 0;
-  right:0px;
-  left: 0px;
-}
+
+/* .honeybg {
+    position: absolute;
+
+    width: 150px;
+    height: 160px;
+    margin-top: 0;
+    margin-left: 0;
+    right:0px;
+    left: 0px;
+  } */
 
 .circle {
 
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 
   background: #f3f3f3;
   clip-path: circle(50% at 50% 50%);
   z-index: 0;
-  margin: 10px 10px;
+  display: inline-block;
+  vertical-align: auto;
+  /* position: absolute;
+  float: right;
+  left:50%;
+  top:-50%; */
+
+  /* margin: auto 1.5em; */
 
 }
 
@@ -169,8 +254,7 @@
   /* display: flex;
   align-content: center; */
   border: solid #0D4B1F;
-   border-width: 4x;
-
+  border-width: 4px;
   position: fixed;
   bottom:0;
   left: 0;
