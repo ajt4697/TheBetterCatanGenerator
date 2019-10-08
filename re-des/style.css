@@ -9,7 +9,7 @@ html, body {margin:0;padding:0;height:100%;}
       background: rgb(235, 202, 15);
     }
 
-    #full-width {
+    #board {
         width: 100vh;
         height:100vh;
         /* height: calc(100vw * (9/16)); */
@@ -20,7 +20,7 @@ html, body {margin:0;padding:0;height:100%;}
         transform: translate(-50%, -50%); */
       }
 
-      .options {
+      #options {
         position: absolute;
         height: calc(100vh*(3/4));
         width: calc(100vw - 100vh);
@@ -28,7 +28,7 @@ html, body {margin:0;padding:0;height:100%;}
         bottom:0;
         background: green;
   }
-  .title {
+  #title {
         background: rgb(113, 0, 128);
         position: absolute;
         height: calc(100vh*(1/4));
@@ -36,25 +36,11 @@ html, body {margin:0;padding:0;height:100%;}
         left:0;
         top:0;
 }
-
-
-
-  }
+}
 
   @media all and (orientation: portrait) {
 
-    #holder {
-
-      width:95%;
-      position: relative;
-      left:2.5%;
-      padding-bottom:95%;
-      height:0;
-      background: rgb(94, 0, 30);
-
-    }
-
-    #full-width {
+    #board {
         width: 100vw;
         height:100vw;
         /* height: calc(100vw * (9/16)); */
@@ -63,49 +49,54 @@ html, body {margin:0;padding:0;height:100%;}
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-      }
-
-      .options {
-          height: calc((100vh - 100vw)/2);
-          width: 100vw;
-          position: absolute;
-          bottom:0;
-          background: green;
     }
-    .title {
+
+    #options {
+        height: calc((100vh - 100vw)/2);
+        width: 100vw;
+        position: absolute;
+        bottom:0;
+        background: green;
+    }
+
+    #title {
         height: calc((100vh - 100vw)/2);
         width: 100vw;
         position: absolute;
         top:0;
         background: rgb(113, 0, 128);
-  }
-
-  }
-
-  .square {
-    position: relative;
-    width: 50%;
-  }
-
-  .square:after {
-    content: "";
-    display: block;
-    padding-bottom: 100%;
-  }
-
-
+    }
+}
 
   .hex {
 
-    position: absolute;
     -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    transform: rotate(90deg);
     height:19%;
     width: calc(19% * 1.73205 / 2);
     background: rgb(71, 70, 70);
     /* background: url("./grass.jpg"); */
+    /* POSITIONING */
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+
+  }
+
+  .circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: calc(40% * 1.73205 / 2);
+    width: 40%;
+    border: 1px solid black;
+    background: #f3f3f3;
+    border-radius: 50%;
+  }
+
+  .tile-2
+  {
+    background:blue;
   }
