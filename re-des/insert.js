@@ -65,8 +65,8 @@ let buildBoard = () => {
 
 buildBoard();
 //generateTiles();
-// document.getElementById('tile-1').classList.add('desert');
-// document.getElementById('circle-1').innerHTML = `<h2>12</h2>`
+document.getElementById('tile-1').classList.add('sheep');
+document.getElementById('circle-1').innerHTML = `<h2>12</h2>`
 
 
 window.onresize = function () {
