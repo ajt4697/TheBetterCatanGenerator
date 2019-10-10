@@ -137,16 +137,16 @@ html, body {margin:0;padding:0;height:100vh;}
     background-size: auto 100%;
   } */
 
-  .ore
-  {
+  /* .ore
+  { */
     /* background: url(./assets/ore.png); */
     /* background-repeat: no-repeat;
     background-position: center center;
     background-size:contain; */
-  }
+  /* } */
 
-  .desert
-  {
+  /* .desert
+  { */
     /* background: url(./assets/desert.png); */
     /* background-size: auto 100%;
     -webkit-background-size: cover;
@@ -154,5 +154,35 @@ html, body {margin:0;padding:0;height:100vh;}
     -o-background-size: cover;
     margin: 0;
     background-attachment: fixed;
-    max-width: 100%; */
+    /* max-width: 100%; */
+  /* } */
+
+  .sheep
+  {
+    background: green;
+  }
+
+  .wheat
+  {
+    background: yellow;
+  }
+
+  .wood
+  {
+    background: darkolivegreen;
+  }
+
+  .brick
+  {
+    background:red;
+  }
+
+  .ore
+  {
+    background: purple;
+  }
+
+  .desert
+  {
+
   }
