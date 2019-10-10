@@ -139,14 +139,20 @@ html, body {margin:0;padding:0;height:100vh;}
 
   .ore
   {
-    background: url(./assets/ore.png);
+    /* background: url(./assets/ore.png); */
     background-repeat: no-repeat;
     background-position: center center;
     background-size:contain;
   }
 
-  /* .desert
+  .desert
   {
-    background: url(./assets/desert.png);
+    /* background: url(./assets/desert.png); */
     background-size: auto 100%;
-  } */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    margin: 0;
+    background-attachment: fixed;
+    max-width: 100%;
+  }
