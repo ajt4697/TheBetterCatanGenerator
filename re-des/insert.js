@@ -58,8 +58,8 @@ let generateTiles = () => {
     for (let [id, tile] of tiles.entries()) {
         //console.log(`${tile.chit} for ${tile.resource}`)
         console.log(id)
-        //document.getElementById(`tile-${id}`).classList.add(tile.resource);
-        //document.getElementById(`circle-${id}`).innerHTML = `<h2>${tile.chit}</h2>`
+        document.getElementById(`tile-${id}`).classList.add(tile.resource);
+        document.getElementById(`circle-${id}`).innerHTML = `<h2>${tile.chit}</h2>`
     }
 }
 
