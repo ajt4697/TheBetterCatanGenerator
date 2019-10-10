@@ -112,7 +112,7 @@ html, body {margin:0;padding:0;height:100vh;}
   }
 
 
-
+/*
   .sheep
   {
     background: url(./assets/sheep.png);
@@ -127,7 +127,7 @@ html, body {margin:0;padding:0;height:100vh;}
 
   .wood
   {
-    /* background: url(./assets/lumber.png); */
+     background: url(./assets/lumber.png);
     background-size: auto 100%;
   }
 
@@ -135,16 +135,18 @@ html, body {margin:0;padding:0;height:100vh;}
   {
     background: url(./assets/brick.png);
     background-size: auto 100%;
-  }
+  } */
 
   .ore
   {
     background: url(./assets/ore.png);
-    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size:contain;
   }
 
-  .desert
+  /* .desert
   {
     background: url(./assets/desert.png);
     background-size: auto 100%;
-  }
+  } */
