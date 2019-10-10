@@ -22,6 +22,8 @@ let generateTiles = () => {
 }
 
 buildBoard();
+document.getElementById('tile-1').classList.add('wheat');
+document.getElementById('circle-1').innerHTML = `<h2>2</h2>`
 
 
 window.onresize = function () {
