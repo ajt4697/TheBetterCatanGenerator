@@ -31,6 +31,7 @@ html, body {margin:0;padding:0;height:100vh;}
         left:0;
         bottom:0;
         background: green;
+
   }
   #title {
         background: rgb(113, 0, 128);
@@ -159,6 +160,10 @@ html, body {margin:0;padding:0;height:100vh;}
     background: transparent;
     border: transparent;
 
+  }
+
+  .button {
+    width:80vw;
   }
 
 
