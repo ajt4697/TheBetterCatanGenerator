@@ -1,36 +1,31 @@
 //keeping this here for now bc im having trouble importing it
-// class Bored {
-//     constructor() {
-//         // this.gen();
-//     }
-//     state = {
-//         numArray: [2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12],
-//         resourceArray: ["ore", "ore", "ore", "brick", "brick", "brick", "sheep"
-//             , "sheep", "sheep", "sheep", "wood", "wood", "wood", "wood",
-//             "wheat", "wheat", "wheat", "wheat",]
-//     }
+state = {
+    numArray: [2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12],
+    resourceArray: ["ore", "ore", "ore", "brick", "brick", "brick", "sheep"
+        , "sheep", "sheep", "sheep", "wood", "wood", "wood", "wood",
+        "wheat", "wheat", "wheat", "wheat",]
+}
+gen = () => {
+    let randomNumbers = this.state.numArray
+    let randomResources = this.state.resourceArray
+    let tiles = []
 
-//     gen = () => {
-//         let randomNumbers = this.state.numArray
-//         let randomResources = this.state.resourceArray
-//         let tiles = []
+    for (let x in randomNumbers) {
+        let tile = Object()
+        tile.chit = randomNumbers[x]
+        tile.resource = randomResources[x]
+        tiles.push(tile)
+    }
 
-//         for (let x in randomNumbers) {
-//             let tile = Object()
-//             tile.chit = randomNumbers[x]
-//             tile.resource = randomResources[x]
-//             tiles.push(tile)
-//         }
+    let dessert = Object()
+    dessert.resource = "desert"
+    dessert.chit = ""
+    tiles.push(dessert)
 
-//         let dessert = Object()
-//         dessert.resource = "desert"
-//         dessert.chit = ""
-//         tiles.push(dessert)
+    console.log(tiles)
+    return tiles
+}
 
-//         console.log(tiles)
-//         return tiles
-//     }
-// }
 
 ////end what should not be in this file
 
@@ -52,8 +47,8 @@ let buildBoard = () => {
 }
 
 let generateTiles = () => {
-    let board = new Bored();
-    let tiles = board.gen();
+    // let board = new Bored();
+    let tiles = gen();
 
     document.getElementById('tile-1').classList.add('sheep');
     document.getElementById('circle-1').innerHTML = `<h2>12</h2>`
