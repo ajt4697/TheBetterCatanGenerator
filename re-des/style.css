@@ -88,14 +88,16 @@ html, body {margin:0;padding:0;height:100vh;}
     -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     height:19%;
-    width: calc(19% * 1.73205 / 2);
+    width: calc(19% * 1.732050808 / 2);
     background: rgb(71, 70, 70);
-    /* background: url("./grass.jpg"); */
     /* POSITIONING */
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    background-size: auto 100%;
+     /* background-repeat: no-repeat */
+
 
   }
 
@@ -111,7 +113,7 @@ html, body {margin:0;padding:0;height:100vh;}
     border-radius: 50%;
   }
 
-
+/* mess with tile width calc or no repeat on the tiles */
 
   .sheep
   {
@@ -127,14 +129,16 @@ html, body {margin:0;padding:0;height:100vh;}
 
   .wood
   {
-     background: url(./assets/lumber.png);
+     background: url(./assets/wood.png);
     background-size: auto 100%;
+
   }
 
   .brick
   {
     background: url(./assets/brick.png);
     background-size: auto 100%;
+    /* background-repeat: no-repeat */
   }
 
   .ore
@@ -148,6 +152,13 @@ html, body {margin:0;padding:0;height:100vh;}
   {
     background: url(./assets/desert.png);
     background-size: auto 100%;
+  }
+
+
+  .desert-chit {
+    background: transparent;
+    border: transparent;
+
   }
 
 

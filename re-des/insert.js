@@ -5,7 +5,8 @@ state = {
         , "sheep", "sheep", "sheep", "wood", "wood", "wood", "wood",
         "wheat", "wheat", "wheat", "wheat",]
 }
-gen = () => {
+
+let gen = () => {
     let randomNumbers = this.state.numArray
     let randomResources = this.state.resourceArray
     let tiles = []
@@ -21,6 +22,8 @@ gen = () => {
     dessert.resource = "desert"
     dessert.chit = ""
     tiles.push(dessert)
+
+
 
     console.log(tiles)
     return tiles
@@ -46,20 +49,26 @@ let buildBoard = () => {
     }
 }
 
+let test = () => {
+    event.preventDefault();
+    console.log(`test`)
+    state.resourceArray.reverse();
+    generateTiles();
+}
+
 let generateTiles = () => {
-    // let board = new Bored();
+
     let tiles = gen();
-
-    document.getElementById('tile-1').classList.add('sheep');
-    document.getElementById('circle-1').innerHTML = `<h2>12</h2>`
-
-
-    //console.log(tiles);
     for (let [id, tile] of tiles.entries()) {
-        //console.log(`${tile.chit} for ${tile.resource}`)
-        console.log(id)
-        document.getElementById(`tile-${id}`).classList.add(tile.resource);
+        document.getElementById(`tile-${id}`).style.backgroundImage = `url(./assets/${tile.resource}.png)`;
+        //document.getElementById(`tile-${id}`).classList.add(tile.resource);
         document.getElementById(`circle-${id}`).innerHTML = `<h2>${tile.chit}</h2>`
+
+        if (tile.resource == "desert") {
+            document.getElementById(`circle-${id}`).classList.add("desert-chit")
+        } else {
+            document.getElementById(`circle-${id}`).classList.remove("desert-chit")
+        }
     }
 }
 
@@ -69,7 +78,13 @@ generateTiles();
 
 
 
+
+
+
 window.onresize = function () {
     document.body.height = window.innerHeight;
 }
 //window.onresize(); // called to initially set the height.
+
+
+  //  document.getElementById(`tile-${id}`).classList.add(tile.resource);
