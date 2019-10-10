@@ -14,10 +14,10 @@ html, body {margin:0;padding:0;height:100vh;}
       }
 
       h2 {
-        font-size: 6vh;
+        font-size: 5vh;
         padding:0;
         margin:0;
-        color:rgb(109, 18, 18);
+        color: black;
         position: absolute;
         left: 50%;
         top: 50%;
@@ -56,10 +56,10 @@ html, body {margin:0;padding:0;height:100vh;}
     }
 
     h2 {
-      font-size: 6vw;
+      font-size: 5vw;
       padding:0;
       margin:0;
-      color:red;
+      color:black;
       position: absolute;
       left: 50%;
       top: 50%;
@@ -104,16 +104,47 @@ html, body {margin:0;padding:0;height:100vh;}
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    height: calc(45% * 1.73205 / 2);
-    width: 45%;
+    height: calc(40% * 1.73205 / 2);
+    width: 40%;
     border: 1px solid black;
-    background: #f3f3f3;
+    background:rgb(227, 197, 134);
     border-radius: 50%;
   }
 
 
 
+  .sheep
+  {
+    background: url(./assets/sheep.png);
+    background-size: auto 100%;
+  }
+
   .wheat
   {
-    background: url(./assets/grass.png);
+    background: url(./assets/wheat.png);
+    background-size: auto 100%;
+  }
+
+  .wood
+  {
+    background: url(./assets/lumber.png);
+    background-size: auto 100%;
+  }
+
+  .brick
+  {
+    background: url(./assets/brick.png);
+    background-size: auto 100%;
+  }
+
+  .ore
+  {
+    background: url(./assets/ore.png);
+    background-size: auto 100%;
+  }
+
+  .desert
+  {
+    background: url(./assets/desert.png);
+    background-size: auto 100%;
   }
