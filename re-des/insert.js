@@ -51,22 +51,27 @@ let buildBoard = () => {
     }
 }
 
-// let generateTiles = () => {
-//     let board = new Bored();
-//     let tiles = board.gen();
-//     //console.log(tiles);
-//     for (let [id, tile] of tiles.entries()) {
-//         //console.log(`${tile.chit} for ${tile.resource}`)
-//         console.log(id)
-//         //document.getElementById(`tile-${id}`).classList.add(tile.resource);
-//         //document.getElementById(`circle-${id}`).innerHTML = `<h2>${tile.chit}</h2>`
-//     }
-// }
+let generateTiles = () => {
+    let board = new Bored();
+    let tiles = board.gen();
+
+    document.getElementById('tile-1').classList.add('sheep');
+    document.getElementById('circle-1').innerHTML = `<h2>12</h2>`
+
+
+    //console.log(tiles);
+    for (let [id, tile] of tiles.entries()) {
+        //console.log(`${tile.chit} for ${tile.resource}`)
+        console.log(id)
+        //document.getElementById(`tile-${id}`).classList.add(tile.resource);
+        //document.getElementById(`circle-${id}`).innerHTML = `<h2>${tile.chit}</h2>`
+    }
+}
 
 buildBoard();
-//generateTiles();
-document.getElementById('tile-1').classList.add('sheep');
-document.getElementById('circle-1').innerHTML = `<h2>12</h2>`
+generateTiles();
+
+
 
 
 window.onresize = function () {
