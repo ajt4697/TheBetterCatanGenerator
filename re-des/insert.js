@@ -1,36 +1,36 @@
 //keeping this here for now bc im having trouble importing it
-class Bored {
-    constructor() {
-        // this.gen();
-    }
-    state = {
-        numArray: [2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12],
-        resourceArray: ["ore", "ore", "ore", "brick", "brick", "brick", "sheep"
-            , "sheep", "sheep", "sheep", "wood", "wood", "wood", "wood",
-            "wheat", "wheat", "wheat", "wheat",]
-    }
+// class Bored {
+//     constructor() {
+//         // this.gen();
+//     }
+//     state = {
+//         numArray: [2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12],
+//         resourceArray: ["ore", "ore", "ore", "brick", "brick", "brick", "sheep"
+//             , "sheep", "sheep", "sheep", "wood", "wood", "wood", "wood",
+//             "wheat", "wheat", "wheat", "wheat",]
+//     }
 
-    gen = () => {
-        let randomNumbers = this.state.numArray
-        let randomResources = this.state.resourceArray
-        let tiles = []
+//     gen = () => {
+//         let randomNumbers = this.state.numArray
+//         let randomResources = this.state.resourceArray
+//         let tiles = []
 
-        for (let x in randomNumbers) {
-            let tile = Object()
-            tile.chit = randomNumbers[x]
-            tile.resource = randomResources[x]
-            tiles.push(tile)
-        }
+//         for (let x in randomNumbers) {
+//             let tile = Object()
+//             tile.chit = randomNumbers[x]
+//             tile.resource = randomResources[x]
+//             tiles.push(tile)
+//         }
 
-        let dessert = Object()
-        dessert.resource = "desert"
-        dessert.chit = ""
-        tiles.push(dessert)
+//         let dessert = Object()
+//         dessert.resource = "desert"
+//         dessert.chit = ""
+//         tiles.push(dessert)
 
-        console.log(tiles)
-        return tiles
-    }
-}
+//         console.log(tiles)
+//         return tiles
+//     }
+// }
 
 ////end what should not be in this file
 
@@ -51,20 +51,20 @@ let buildBoard = () => {
     }
 }
 
-let generateTiles = () => {
-    let board = new Bored();
-    let tiles = board.gen();
-    //console.log(tiles);
-    for (let [id, tile] of tiles.entries()) {
-        //console.log(`${tile.chit} for ${tile.resource}`)
-        console.log(id)
-        //document.getElementById(`tile-${id}`).classList.add(tile.resource);
-        //document.getElementById(`circle-${id}`).innerHTML = `<h2>${tile.chit}</h2>`
-    }
-}
+// let generateTiles = () => {
+//     let board = new Bored();
+//     let tiles = board.gen();
+//     //console.log(tiles);
+//     for (let [id, tile] of tiles.entries()) {
+//         //console.log(`${tile.chit} for ${tile.resource}`)
+//         console.log(id)
+//         //document.getElementById(`tile-${id}`).classList.add(tile.resource);
+//         //document.getElementById(`circle-${id}`).innerHTML = `<h2>${tile.chit}</h2>`
+//     }
+// }
 
 buildBoard();
-generateTiles();
+//generateTiles();
 // document.getElementById('tile-1').classList.add('desert');
 // document.getElementById('circle-1').innerHTML = `<h2>12</h2>`
 
@@ -72,4 +72,4 @@ generateTiles();
 window.onresize = function () {
     document.body.height = window.innerHeight;
 }
-window.onresize(); // called to initially set the height.
+//window.onresize(); // called to initially set the height.
