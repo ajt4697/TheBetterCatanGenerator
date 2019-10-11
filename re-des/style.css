@@ -76,7 +76,7 @@ html, body {
         left: 50%;
 
         transform: translate(-50%, 0);
-        top: 20%;
+        top: 15.5%;
         /* top: calc(100vh - 100%); */
 
 
@@ -97,8 +97,9 @@ html, body {
       width: 100vw;
       position: absolute;
       top:0;
-      background: rgb(113, 0, 128);
+      background: rgb(175, 119, 131);
       text-align: center;
+      border: 2px solid black
   }
 
 
