@@ -6,7 +6,7 @@ html, body {margin:0;padding:0;height:100%; overflow:hidden;}
         width: 100vh;
         height:100vh;
         /* height: calc(100vw * (9/16)); */
-        background: goldenrod;
+        /* background: goldenrod; */
         position: absolute;
         right:0;
         /* top: 50%;
@@ -47,7 +47,7 @@ html, body {margin:0;padding:0;height:100%; overflow:hidden;}
 
   }
   #title {
-        background: rgb(113, 0, 128);
+        /* background: rgb(113, 0, 128); */
         position: absolute;
         /* height: calc(100vh*(1/4)); */
         height:35%;
@@ -65,7 +65,7 @@ html, body {margin:0;padding:0;height:100%; overflow:hidden;}
         width: 100vw;
         height:100vw;
         /* height: calc(100vw * (9/16)); */
-        background: goldenrod;
+        /* background: goldenrod; */
         position: absolute;
         left: 50%;
 
@@ -73,6 +73,7 @@ html, body {margin:0;padding:0;height:100%; overflow:hidden;}
         top: 20%;
 
     }
+
 
     h2 {
       font-size: 5vw;
@@ -111,7 +112,7 @@ html, body {margin:0;padding:0;height:100%; overflow:hidden;}
         width: 100vw;
         position: absolute;
         top:0;
-        background: rgb(113, 0, 128);
+        /* background: rgb(113, 0, 128); */
         text-align: center;
     }
 
@@ -220,6 +221,14 @@ html, body {margin:0;padding:0;height:100%; overflow:hidden;}
 
   .button {
     width:80vw;
+  }
+
+  h1 {
+    padding-bottom: 0;
+  }
+
+  h4 {
+    padding-top: 0;
   }
 
 
