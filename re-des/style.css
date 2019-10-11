@@ -41,6 +41,7 @@ html, body {margin:0;padding:0;height:100vh;}
         left:0;
         top:0;
 }
+
 }
 
   @media all and (orientation: portrait) {
@@ -49,7 +50,7 @@ html, body {margin:0;padding:0;height:100vh;}
         width: 100vw;
         height:100vw;
         /* height: calc(100vw * (9/16)); */
-        background: goldenrod;
+        /* background: goldenrod; */
         position: absolute;
         left: 50%;
         top: 50%;
@@ -64,6 +65,17 @@ html, body {margin:0;padding:0;height:100vh;}
       position: absolute;
       left: 50%;
       top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    h3 {
+      font-size: 2.5vw;
+      padding:0;
+      margin:0;
+      color:black;
+      position: absolute;
+      left: 50%;
+      top: 75%;
       transform: translate(-50%, -50%);
     }
 
@@ -82,6 +94,27 @@ html, body {margin:0;padding:0;height:100vh;}
         top:0;
         background: rgb(113, 0, 128);
     }
+
+
+    #test-outer {
+      -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      height:99vw;
+      width: calc(99vw * 1.732050808 / 2);
+      background: rgb(0,153,211);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: -10;
+      transform: translate(-50%, -50%) rotate(30deg);
+      /* background-size: 100% 100%; */
+      /* background: url(./assets/background.png); */
+    }
+
+    #test-outer::after {
+      background: rgb(200,153,211);
+    }
+
 }
 
   .hex {
@@ -97,7 +130,7 @@ html, body {margin:0;padding:0;height:100vh;}
     top: 50%;
     transform: translate(-50%, -50%);
     background-size: auto 100%;
-     /* background-repeat: no-repeat */
+    background-repeat: no-repeat
 
 
   }
@@ -139,7 +172,7 @@ html, body {margin:0;padding:0;height:100vh;}
   {
     background: url(./assets/brick.png);
     background-size: auto 100%;
-    /* background-repeat: no-repeat */
+    background-repeat: no-repeat
   }
 
   .ore
