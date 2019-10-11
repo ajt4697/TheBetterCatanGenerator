@@ -43,7 +43,10 @@ let tileOffsetCSS = ["top:20.4%;left:33%;", "top:20.4%;", "top:20.4%;left:67%;",
     "top:79.6%;left:33%;", "top:79.6%;", "top:79.6%;left:67%;"]; //fifth row
 
 let buildBoard = () => {
-    document.getElementById('board').innerHTML += `<div id="test-outer"></div>`
+
+    ///////messeses with overflow so its commented out
+    // document.getElementById('board').innerHTML += `<div id="test-outer"></div>`
+
     for (let [id, css] of tileOffsetCSS.entries()) {
 
         document.getElementById('board').innerHTML +=
