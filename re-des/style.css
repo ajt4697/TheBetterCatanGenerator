@@ -1,4 +1,4 @@
-html, body {margin:0;padding:0;height:100vh;}
+html, body {margin:0;padding:0;height:100%; overflow:hidden;}
 
 @media all and (orientation: landscape) {
 
@@ -112,13 +112,16 @@ html, body {margin:0;padding:0;height:100vh;}
       -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
       clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
       height:99vw;
+
       width: calc(99vw * 1.732050808 / 2);
       background: rgb(0,153,211);
       position: absolute;
       left: 50%;
+      overflow: hidden;
       top: 50%;
 
       transform: translate(-50%, -50%) rotate(30deg);
+      overflow-x: hidden;
       /* background-size: 100% 100%; */
       /* background: url(./assets/background.png); */
     }
