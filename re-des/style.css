@@ -1,4 +1,10 @@
-html, body {margin:0;padding:0;height:100%; overflow:hidden;}
+html, body {
+  margin:0;
+  padding:0;
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+  overflow:hidden;
+}
 
 @media all and (orientation: landscape) {
 
@@ -70,10 +76,9 @@ html, body {margin:0;padding:0;height:100%; overflow:hidden;}
         left: 50%;
 
         transform: translate(-50%, 0);
-        /* top: 20%; */
+        top: 20%;
         /* top: calc(100vh - 100%); */
-        height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-        height: calc(var(--vh, 1vh) * 100);
+
 
     }
 
