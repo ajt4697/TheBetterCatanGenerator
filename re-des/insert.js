@@ -1,12 +1,12 @@
 //keeping this here for now bc im having trouble importing it
 
-let prob = ["", "", ".", "..", "...", "....", "......", "", "....", "...", "..", "..", ".",]
+let prob = ["", "", ".", "..", "...", "....", ".....", "", "....", "...", "..", "..", ".",]
 state = {
     numArray: [2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12],
     resourceArray: ["ore", "ore", "ore", "brick", "brick", "brick", "sheep"
         , "sheep", "sheep", "sheep", "wood", "wood", "wood", "wood",
         "wheat", "wheat", "wheat", "wheat",],
-    prob: ["", "", ".", "..", "...", "....", "......", "", "....", "...", "..", "..", ".",]
+    prob: ["", "", ".", "..", "...", "....", ".....", "", "....", "...", "..", "..", ".",]
 
 }
 

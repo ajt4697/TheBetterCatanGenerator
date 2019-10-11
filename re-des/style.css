@@ -68,8 +68,9 @@ html, body {margin:0;padding:0;height:100%; overflow:hidden;}
         background: goldenrod;
         position: absolute;
         left: 50%;
-        top: 15%;
+
         transform: translate(-50%, 0);
+        top: 15%;
 
     }
 
