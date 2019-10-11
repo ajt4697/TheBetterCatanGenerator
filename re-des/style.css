@@ -71,9 +71,30 @@ html, body {margin:0;padding:0;height:100%; overflow:hidden;}
 
         transform: translate(-50%, 0);
         /* top: 20%; */
-        top: calc(100vh - 100%);
+        /* top: calc(100vh - 100%); */
+        height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+        height: calc(var(--vh, 1vh) * 100);
 
     }
+
+    #options {
+      height: calc((100vh - 100vw)/2.5);
+      /* height:30%; */
+      width: 100vw;
+      position: absolute;
+      bottom:0;
+      background: green;
+  }
+
+  #title {
+      /* height: calc((100vh - 100vw)/2); */
+      height:15%;
+      width: 100vw;
+      position: absolute;
+      top:0;
+      background: rgb(113, 0, 128);
+      text-align: center;
+  }
 
 
     h2 {
@@ -98,24 +119,6 @@ html, body {margin:0;padding:0;height:100%; overflow:hidden;}
       transform: translate(-50%, -50%);
     }
 
-    #options {
-        height: calc((100vh - 100vw)/2.5);
-        /* height:30%; */
-        width: 100vw;
-        position: absolute;
-        bottom:0;
-        background: green;
-    }
-
-    #title {
-        /* height: calc((100vh - 100vw)/2); */
-        height:15%;
-        width: 100vw;
-        position: absolute;
-        top:0;
-        background: rgb(113, 0, 128);
-        text-align: center;
-    }
 
 
     #test-outer {
