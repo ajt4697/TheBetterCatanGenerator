@@ -6,7 +6,7 @@ html, body {margin:0;padding:0;height:100%; overflow:hidden;}
         width: 100vh;
         height:100vh;
         /* height: calc(100vw * (9/16)); */
-        /* background: goldenrod; */
+        background: goldenrod;
         position: absolute;
         right:0;
         /* top: 50%;
@@ -47,7 +47,7 @@ html, body {margin:0;padding:0;height:100%; overflow:hidden;}
 
   }
   #title {
-        /* background: rgb(113, 0, 128); */
+        background: rgb(113, 0, 128);
         position: absolute;
         /* height: calc(100vh*(1/4)); */
         height:35%;
@@ -65,12 +65,13 @@ html, body {margin:0;padding:0;height:100%; overflow:hidden;}
         width: 100vw;
         height:100vw;
         /* height: calc(100vw * (9/16)); */
-        /* background: goldenrod; */
+        background: goldenrod;
         position: absolute;
         left: 50%;
 
         transform: translate(-50%, 0);
-        top: 20%;
+        /* top: 20%; */
+        top: calc(100vh - 100%);
 
     }
 
@@ -112,7 +113,7 @@ html, body {margin:0;padding:0;height:100%; overflow:hidden;}
         width: 100vw;
         position: absolute;
         top:0;
-        /* background: rgb(113, 0, 128); */
+        background: rgb(113, 0, 128);
         text-align: center;
     }
 
@@ -169,7 +170,19 @@ html, body {margin:0;padding:0;height:100%; overflow:hidden;}
     border: 1px solid black;
     background:rgb(227, 197, 134);
     border-radius: 50%;
+
   }
+
+  .high-prob h3 {
+    color: red;
+  }
+
+ .high-prob h2
+  {
+    color: red;
+  }
+
+
 
 /* mess with tile width calc or no repeat on the tiles */
 

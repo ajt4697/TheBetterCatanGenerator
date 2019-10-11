@@ -1,33 +1,34 @@
 //keeping this here for now bc im having trouble importing it
-
+let resourceTypes = ["ore", "sheep", "brick", "wood", "wheat"];
 let prob = ["", "", ".", "..", "...", "....", ".....", "", "....", "...", "..", "..", ".",]
 state = {
     numArray: [2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12],
     resourceArray: ["ore", "ore", "ore", "brick", "brick", "brick", "sheep"
         , "sheep", "sheep", "sheep", "wood", "wood", "wood", "wood",
         "wheat", "wheat", "wheat", "wheat",],
-    prob: ["", "", ".", "..", "...", "....", ".....", "", "....", "...", "..", "..", ".",]
+    prob: ["", "", ".", "..", "...", "....", ".....", "", ".....", "....", "...", "..", ".",]
 
 }
 
 let gen = () => {
     let randomNumbers = this.state.numArray
     let randomResources = this.state.resourceArray
+    let probArr = this.state.prob;
     let tiles = []
 
     for (let x in randomNumbers) {
         let tile = Object()
         tile.chit = randomNumbers[x]
         tile.resource = randomResources[x]
+        tile.probability = probArr[tile.chit]
         tiles.push(tile)
     }
 
     let dessert = Object()
     dessert.resource = "desert"
     dessert.chit = ""
+    dessert.probability = ""
     tiles.push(dessert)
-
-
 
     console.log(tiles)
     return tiles
@@ -60,7 +61,9 @@ let buildBoard = () => {
 let test = () => {
     event.preventDefault();
     console.log(`test`)
-    state.resourceArray.reverse();
+    //state.numArray = state.numArray.sort((a, b) => { 0.5 - Math.random() })
+    // state.resourceArray.sort((a, b) => { 0.5 - Math.random() })
+    state.numArray.reverse();
     generateTiles();
 }
 
@@ -70,17 +73,33 @@ let generateTiles = () => {
 
     for (let [id, tile] of tiles.entries()) {
 
-        // let thetile = document.getElementById(`tile-${id}`).style.backgroundImage = `url(./assets/${tile.resource}.png)`;
-        // let theCircle = document.getElementById(`circle-${id}`).innerHTML = `<h2>${tile.chit}</h2><br><h3>.</h3>`
+        let theTile = document.getElementById(`tile-${id}`);
+        let theCircle = document.getElementById(`circle-${id}`);
 
-        document.getElementById(`tile-${id}`).style.backgroundImage = `url(./assets/${tile.resource}.png)`;
-        document.getElementById(`circle-${id}`).innerHTML = `<h2>${tile.chit}</h2>`
+        console.log(theTile.classList)
+
+
+        for (let currentResource of theTile.classList) {
+            if (resourceTypes.includes(currentResource)) {
+                theTile.classList.remove(currentResource);
+                break
+            }
+        }
+        theTile.classList.add(tile.resource);
+        theCircle.innerHTML = `<h2>${tile.chit}</h2>`
+
+        if (tile.chit == 8 || tile.chit == 6) {
+            theTile.classList.add("high-prob")
+        } else {
+            theTile.classList.remove("high-prob")
+            //theTile.style.color = "black";
+        }
 
         if (tile.resource == "desert") {
-            document.getElementById(`circle-${id}`).classList.add("desert-chit")
+            theCircle.classList.add("desert-chit")
         } else {
-            document.getElementById(`circle-${id}`).classList.remove("desert-chit")
-            document.getElementById(`circle-${id}`).innerHTML += `<h3>${prob[tile.chit]}</h3>`
+            theCircle.classList.remove("desert-chit")
+            theCircle.innerHTML += `<h3>${tile.probability}</h3>`
         }
     }
 }
@@ -90,14 +109,6 @@ generateTiles();
 
 
 
-
-
-
-
-window.onresize = function () {
-    document.body.height = window.innerHeight;
-}
-//window.onresize(); // called to initially set the height.
-
+        // theTile.style.backgroundImage = `url(./assets/${tile.resource}.png)`;
 
   //  document.getElementById(`tile-${id}`).classList.add(tile.resource);
