@@ -12,7 +12,7 @@ html, body {
         width: 100vh;
         height:100vh;
         /* height: calc(100vw * (9/16)); */
-        background: goldenrod;
+        background: rgb(0,153,211);
         position: absolute;
         right:0;
         /* top: 50%;
@@ -71,7 +71,7 @@ html, body {
         width: 100vw;
         height:100vw;
         /* height: calc(100vw * (9/16)); */
-        background: goldenrod;
+        background: rgb(0,153,211);
         position: absolute;
         left: 50%;
 
