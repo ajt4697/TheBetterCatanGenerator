@@ -71,7 +71,7 @@ html, body {
         width: 100vw;
         height:100vw;
         /* height: calc(100vw * (9/16)); */
-        background: rgb(0,153,211);
+        /* background: rgb(0,153,211); */
         position: absolute;
         left: 50%;
 
@@ -128,18 +128,19 @@ html, body {
 
 
     #test-outer {
-      -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-      height:99vw;
+      /* -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); */
+      clip-path: polygon(75% 0, 100% 49%, 75% 100%, 25% 100%, 0 50%, 25% 0);
+      width:98vw;
 
-      width: calc(99vw * 1.732050808 / 2);
+      height: calc(98vw * 1.732050808 / 2);
+      background: rgb(74, 83, 87);
       background: rgb(0,153,211);
       position: absolute;
       left: 50%;
       overflow: hidden;
       top: 50%;
 
-      transform: translate(-50%, -50%) rotate(30deg);
+      transform: translate(-50%, -50%);/*rotate(30deg); */
       overflow-x: hidden;
       /* background-size: 100% 100%; */
       /* background: url(./assets/background.png); */
