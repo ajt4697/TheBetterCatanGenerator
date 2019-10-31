@@ -18,6 +18,37 @@ state = {
 
 }
 
+// Represents adjacencies of tiles on the board.
+// Format --> tile # : [adjacent tiles]
+let adjacencyList = {
+
+  0 : [1,3,4],
+  1 : [0,2,4,5],
+  2 : [1,5,6],
+  3 : [0,4,7,8],
+  4 : [0,1,3,5,8,9],
+  5 : [1,2,4,6,9,10],
+  6 : [2,5,10,11],
+  7 : [3,8,12],
+  8 : [3,4,7,9,12,13],
+  9 : [4,5,8,10,13,14],
+  10 : [5,6,9,11,14,15],
+  11 : [6,10,15],
+  12 : [7,8,13,16],
+  13 : [8,9,12,14,16,17],
+  14 : [9,10,13,15,17,18],
+  15 : [10,11,14,18],
+  16 : [12,13,17],
+  17 : [13,14,16,18],
+  18 : [14,15,17]
+
+}
+
+
+
+
+
+
 // This shuffle algorithm is used to shuffle both the resources and the numbers.
 // Following that, it is used to shuffled the Tiles array created in gen().
 // This algorithm shuffles the array in place.
@@ -31,11 +62,34 @@ let shuffle = (arr) => {
 }
 
 
+// Checks the adjacencies of the specified tile.
+// Returns true if adjacency present.
+// Returns false if no adjacency present.
+
+
+
+// Checks over each number in the randomized number array.
+// If a number is a 6 or an 8, check its adjacencies.
+// If there is a 6 or 8 in its adjacencies, return true, AKA there are adjacencies present.
+// If it goes through whole array and does not encounter adjacent 6 and 8s, return false,
+// AKA there are no adjacencies present.
+let passedAdjacencyTest = (tilesArr) => {
+  for (let [boardLocation, chitValue] of tilesArr.entries()) {
+    if (chitValue.chit== 6 || chitValue.chit == 8) {
+      for (adj of adjacencyList[boardLocation]) {
+        if ( tilesArr[adj].chit == 6 || tilesArr[adj].chit == 8) return false
+      }
+    }
+  }
+  return true
+}
+
 
 // This method just creates and returns the array of tiles (tile information)
 // that generateTiles() uses to present the tiles to the board in HTML form.
 let gen = () => {
     let randomNumbers = shuffle(this.state.numArray)
+
     let randomResources = shuffle(this.state.resourceArray)
     let probArr = this.state.prob;
     let tiles = []
@@ -53,7 +107,8 @@ let gen = () => {
     desert.chit = ""
     desert.probability = ""
     tiles.push(desert)
-    console.log(tiles)
+
+    //console.log(tiles)
     return shuffle(tiles)
 }
 
@@ -84,20 +139,29 @@ let generateBoard = () => {
     // state.resourceArray.sort((a, b) => { 0.5 - Math.random() })
     // state.numArray.reverse();
     generateTiles();
+
+
+
 }
 
 // This handles the HTML component/displaying of the tiles using the array
 // returned by gen().
 let generateTiles = () => {
 
+  //
     let tiles = gen();
+    while(!passedAdjacencyTest(tiles))
+    {
+      tiles = gen();
+    }
 
+    //
     for (let [id, tile] of tiles.entries()) {
 
         let theTile = document.getElementById(`tile-${id}`);
         let theCircle = document.getElementById(`circle-${id}`);
 
-        console.log(theTile.classList)
+        //console.log(theTile.classList)
 
 
         for (let currentResource of theTile.classList) {
