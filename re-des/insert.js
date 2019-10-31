@@ -74,8 +74,8 @@ let shuffle = (arr) => {
 // If it goes through whole array and does not encounter adjacent 6 and 8s, return false,
 // AKA there are no adjacencies present.
 let passedAdjacencyTest = (tilesArr) => {
-  for (let [boardLocation, chitValue] of tilesArr.entries()) {
-    if (chitValue.chit== 6 || chitValue.chit == 8) {
+  for (let [boardLocation,  tile] of tilesArr.entries()) {
+    if (tile.chit== 6 || tile.chit == 8) {
       for (adj of adjacencyList[boardLocation]) {
         if ( tilesArr[adj].chit == 6 || tilesArr[adj].chit == 8) return false
       }
@@ -84,12 +84,31 @@ let passedAdjacencyTest = (tilesArr) => {
   return true
 }
 
+let passedResourceCheck = (tilesArr) => {
+  for (let [boardLocation, tile] of tilesArr.entries()) {
+      let resource = tile.resource
+      let count = 1;
+      for (adj of adjacencyList[boardLocation]) {
+         // console.log (` ${resource} == ${tilesArr[adj].resource}`)
+          if(resource == tilesArr[adj].resource){
+            // console.log (`HIT`)
+            count++
+          }
+      }
+      // console.log(count)
+      if (count > 2) {
+        return false
+      }
+  }
+  return true
+}
+
+
 
 // This method just creates and returns the array of tiles (tile information)
 // that generateTiles() uses to present the tiles to the board in HTML form.
 let gen = () => {
     let randomNumbers = shuffle(this.state.numArray)
-
     let randomResources = shuffle(this.state.resourceArray)
     let probArr = this.state.prob;
     let tiles = []
@@ -134,7 +153,7 @@ let buildBoard = () => {
 // This is how the DOM interacts with the JS part.
 let generateBoard = () => {
     event.preventDefault();
-    console.log(`test`)
+    // console.log(`test`)
     //state.numArray = state.numArray.sort((a, b) => { 0.5 - Math.random() })
     // state.resourceArray.sort((a, b) => { 0.5 - Math.random() })
     // state.numArray.reverse();
@@ -148,14 +167,20 @@ let generateBoard = () => {
 // returned by gen().
 let generateTiles = () => {
 
-  //
-    let tiles = gen();
-    while(!passedAdjacencyTest(tiles))
-    {
-      tiles = gen();
-    }
 
-    //
+  //  let tiles = gen();
+  //   while(!passedAdjacencyTest(tiles) && !passedResourceCheck(tiles))
+  //   {
+  //     tiles = gen();
+  //     console.log("new board (before checking)")
+  //     console.log(tiles)
+  //   }
+    let tiles = gen();
+      do {
+        tiles = gen();
+      } while(!passedAdjacencyTest(tiles) || !passedResourceCheck(tiles))
+
+
     for (let [id, tile] of tiles.entries()) {
 
         let theTile = document.getElementById(`tile-${id}`);
