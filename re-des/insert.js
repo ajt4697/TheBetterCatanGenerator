@@ -8,7 +8,7 @@ let tileOffsetCSSWorking = ["top:20.4%;left:33%;", "top:20.4%;", "top:20.4%;left
 
 // let tileOffsetCSS = [" ", "top:20.4%;", "top:50%;left:60%;", //first row
 // ]; //fifth row
-let size = 17.25;
+let size = 17.2;
 
 let tileOffsetCSS = getOffsets(size);
 //let tileOffsetCSS = ["top:50%;left50%", "top:50%;left66.454482676%", "top:50%;left82.908965352%"];
@@ -191,7 +191,7 @@ let buildBoard = () => {
 
   ///////messeses with overflow so its commented out
   // document.getElementById('board').innerHTML += `<div id="test-outer"></div>`
-  document.getElementById('board').innerHTML += `<div id="border"></div>`
+  // document.getElementById('board').innerHTML += `<div id="border"></div>`
 
   for (let [id, css] of tileOffsetCSS.entries()) {
 
@@ -202,6 +202,7 @@ let buildBoard = () => {
             </div>`
   }
 
+  document.getElementById('board').innerHTML += `<div id="border"></div>`
 
   for (let [i, css] of portCSS.entries()) {
     console.log(css)

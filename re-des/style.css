@@ -68,6 +68,7 @@ html, body {
   width:98vh;
 
   height: calc(98vh * 1.732050808 / 2);
+  height:98vh;
   background: rgb(74, 83, 87);
   background: rgb(0,153,211);
   position: absolute;
@@ -104,7 +105,7 @@ html, body {
         width: 100vw;
         height:100vw;
         /* height: calc(100vw * (9/16)); */
-        /* background: rgb(0,153,211); */
+        background: rgb(235, 232, 224);
         position: absolute;
         left: 50%;
 
@@ -197,7 +198,15 @@ html, body {
       background-size: 100% 100%;
       background-repeat: no-repeat
     }
+    .button {
+      width:80vw;
+      height:40%;
+      position: absolute;
+      left: 10%;
+      top:10%;
+      font-size: 30px;
 
+    }
 }
 
   .hex {
@@ -306,9 +315,7 @@ html, body {
 
   }
 
-  .button {
-    width:80vw;
-  }
+
 
   h1 {
     padding-bottom: 0;
