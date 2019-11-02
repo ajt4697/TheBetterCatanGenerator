@@ -189,10 +189,7 @@ let gen = () => {
 
 let buildBoard = () => {
 
-  ///////messeses with overflow so its commented out
-  // document.getElementById('board').innerHTML += `<div id="test-outer"></div>`
-  // document.getElementById('board').innerHTML += `<div id="border"></div>`
-
+  document.getElementById('board').innerHTML += `<div id="border"></div>`
   for (let [id, css] of tileOffsetCSS.entries()) {
 
     document.getElementById('board').innerHTML +=
@@ -202,16 +199,14 @@ let buildBoard = () => {
             </div>`
   }
 
-  document.getElementById('board').innerHTML += `<div id="border"></div>`
-
-  for (let [i, css] of portCSS.entries()) {
-    console.log(css)
-    document.getElementById('board').innerHTML +=
-      `<div class="port" style="${css}")>
-      </div>`
-  }
 
 
+  // for (let [i, css] of portCSS.entries()) {
+  //   console.log(css)
+  //   document.getElementById('board').innerHTML +=
+  //     `<div class="port" style="${css}")>
+  //     </div>`
+  // }
 
 }
 
