@@ -63,8 +63,8 @@ html, body {
         text-align: center;
 }
 #test-outer {
-  -webkit-clip-path: polygon(75% 0, 100% 49%, 75% 100%, 25% 100%, 0 50%, 25% 0);;
-  clip-path: polygon(75% 0, 100% 49%, 75% 100%, 25% 100%, 0 50%, 25% 0);
+  /* -webkit-clip-path: polygon(75% 0, 100% 49%, 75% 100%, 25% 100%, 0 50%, 25% 0);;
+  clip-path: polygon(75% 0, 100% 49%, 75% 100%, 25% 100%, 0 50%, 25% 0); */
   width:98vh;
 
   height: calc(98vh * 1.732050808 / 2);
@@ -77,8 +77,23 @@ html, body {
 
   transform: translate(-50%, -50%);/*rotate(30deg); */
   overflow-x: hidden;
-  /* background-size: 100% 100%; */
-  /* background: url(./assets/background.png); */
+  background-size: 100% 100%;
+  background: url(./assets/background.png);
+}
+
+#border {
+  width:99vh;
+  height: calc(99vh * 1.732050808 / 2);
+  background: rgb(0,153,211);
+  position: absolute;
+  left: 50%;
+  overflow: hidden;
+  top: 50%;
+  transform: translate(-50%, -50%);/*rotate(30deg); */
+  overflow-x: hidden;
+  background: url(./assets/background.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat
 }
 
 }
@@ -168,14 +183,29 @@ html, body {
       background: rgb(200,153,211);
     }
 
+    #border {
+      width:99vw;
+      height: calc(99vw * 1.732050808 / 2);
+      background: rgb(0,153,211);
+      position: absolute;
+      left: 50%;
+      overflow: hidden;
+      top: 50%;
+      transform: translate(-50%, -50%);/*rotate(30deg); */
+      overflow-x: hidden;
+      background: url(./assets/background.png);
+      background-size: 100% 100%;
+      background-repeat: no-repeat
+    }
+
 }
 
   .hex {
 
     -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    height:19%;
-    width: calc(19% * 1.732050808 / 2);
+    height:17.5%;
+    width: calc(17.5% * 1.732050808 / 2);
     background: rgb(71, 70, 70);
     /* POSITIONING */
     position: absolute;
@@ -184,8 +214,6 @@ html, body {
     transform: translate(-50%, -50%);
     background-size: auto 100%;
     background-repeat: no-repeat
-
-
   }
 
   .circle {
@@ -218,19 +246,21 @@ html, body {
   {
     background: url(./assets/sheep.png);
     background-size: auto 100%;
+    background-repeat: no-repeat
   }
 
   .wheat
   {
     background: url(./assets/wheat.png);
     background-size: auto 100%;
+    background-repeat: no-repeat
   }
 
   .wood
   {
      background: url(./assets/wood.png);
     background-size: auto 100%;
-
+    background-repeat: no-repeat
   }
 
   .brick
@@ -244,6 +274,7 @@ html, body {
   {
     background: url(./assets/ore.png);
     background-size: auto 100%;
+    background-repeat: no-repeat
   }
 
 
@@ -251,6 +282,7 @@ html, body {
   {
     background: url(./assets/desert.png);
     background-size: auto 100%;
+    background-repeat: no-repeat
   }
 
 .port
