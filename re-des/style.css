@@ -12,7 +12,7 @@ html, body {
         width: 100vh;
         height:100vh;
         /* height: calc(100vw * (9/16)); */
-        background: rgb(0,153,211);
+        /* background: rgb(0,153,211); */
         position: absolute;
         right:0;
         /* top: 50%;
@@ -61,6 +61,24 @@ html, body {
         left:0;
         top:0;
         text-align: center;
+}
+#test-outer {
+  -webkit-clip-path: polygon(75% 0, 100% 49%, 75% 100%, 25% 100%, 0 50%, 25% 0);;
+  clip-path: polygon(75% 0, 100% 49%, 75% 100%, 25% 100%, 0 50%, 25% 0);
+  width:98vh;
+
+  height: calc(98vh * 1.732050808 / 2);
+  background: rgb(74, 83, 87);
+  background: rgb(0,153,211);
+  position: absolute;
+  left: 50%;
+  overflow: hidden;
+  top: 50%;
+
+  transform: translate(-50%, -50%);/*rotate(30deg); */
+  overflow-x: hidden;
+  /* background-size: 100% 100%; */
+  /* background: url(./assets/background.png); */
 }
 
 }
@@ -233,6 +251,20 @@ html, body {
   {
     background: url(./assets/desert.png);
     background-size: auto 100%;
+  }
+
+.port
+  {
+    background: url(./assets/wood-port.png);
+    background-size: auto 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height:vw;
+    width: 6vw;
+    background-size: auto 100%;
+    background-repeat: no-repeat
   }
 
 
